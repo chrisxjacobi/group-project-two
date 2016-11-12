@@ -21,31 +21,34 @@ $('.col-search').html('<h2>search-results</h2>');
 var currentUrl = window.location.origin;
 console.log(currentUrl);
 
+
+//how do we use the input from the search bar to search the fields in the response?  must be in the sequelize
 var searchTerm = $('#input-search').val();
 var response = [{
-	projectName: "Paint Norma's Fence",
-	location: "675 Mairo St, Austin, TX 78748",
-	description: "paint a fence for norma, she is awesome",
-	dateTime: '2017-08-20 15:00',
-	role: "painter",
-	duration: 4
+	project_name: "Paint Norma's Fence",
+	project_location: "675 Mairo St, Austin, TX 78748",
+	project_description: "paint a fence for norma, she is awesome",
+	project_date_time: '2017-08-20 15:00',
+	project_role: "painter",
+	project_duration: 4
 }, {
-	projectName: "Austin Food Pantry",
-	location: "673 Mairo St, Austin, TX 78748",
-	description: "stock cans for the hungry",
-	dateTime: '2017-08-21 10:00',
-	role: "stocker",
-	duration: 2.5
+	project_name: "Austin Food Pantry",
+	project_location: "673 Mairo St, Austin, TX 78748",
+	project_description: "stock cans for the hungry",
+	project_date_time: '2017-08-21 10:00',
+	project_role: "stocker",
+	project_duration: 2.5
 }, {
-	projectName: "file papers for a professor",
-	location: "671 Mairo St, Austin, TX 78748",
-	description: "file all the newest research for a sociology professor",
-	dateTime: '2017-08-22 12:00',
-	role: "filer",
-	duration: 3
+	project_name: "file papers for a professor",
+	project_location: "671 Mairo St, Austin, TX 78748",
+	project_description: "file all the newest research for a sociology professor",
+	project_date_time: '2017-08-22 12:00',
+	project_role: "filer",
+	project_duration: 3
 
 }];
-/* $.get(currentUrl + '/helpr/search?' + searchTerm, */
+
+$.get(currentUrl + '/helpr/search?' + searchTerm,
 	function callback(error, response) {
 		//if(error) throw error;
 		$('.container-projects').hide();
@@ -54,7 +57,7 @@ var response = [{
 		console.log(response);
 	//response should be an array with objects inside
 		for(var i = 0; i < response.length; i++) {
-			var results = $('<div><h3>' + response[i].titleOfProject + '</h3><h4>' + response[i].role + '</h4><p>' + response[i].date + ' &bull; ' + response[i].time + '</p><p>' + response[i].location + '</p>' + '<div>map</div><p>' + response[i].description + '</p></div>');
+			var results = $('<div><h3>' + response[i].project_name + '</h3><h4>' + response[i].role + '</h4><p>' + response[i].date + ' &bull; ' + response[i].time + '</p><p>' + response[i].location + '</p>' + '<div>map</div><p>' + response[i].description + '</p></div>');
 			$('.col-search').append(results);
 		}
 	} /* ); */
@@ -79,7 +82,8 @@ $.get(currentUrl + '/helpr/addproj?' + projectParams, function(err, data) {
 	console.log(data)
 }); //get add proj
 
-//render add yourself to a project fields
+//render add yourself to a project fields in the html
+
 
 
 
