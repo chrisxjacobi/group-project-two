@@ -17,6 +17,8 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed|Ubuntu+Mono" rel="stylesheet">
     <!-- Theme CSS -->
     <link href="../public/assets/css/main-style.css" rel="stylesheet">
+    <!-- date and time CSS -->
+    <link href="../public/assets/js/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 
 </head>
 
@@ -104,7 +106,11 @@
             <label for="formGroupExampleInput2">project name</label>
             <input type="text" class="form-control" id="project-name" placeholder="paint grandma's house">
           </div>
-          <input size="16" type="text" value="12-15-2016 4:00" readonly class="form_datetime">
+          <input data-provide="datepicker" size="16" type="text" value="12-15-2016 4:00" readonly class="form_datetime">
+          <form action="demo_form.asp" method="get">
+            <input type="checkbox" name="vehicle" value="0"> organizer <br>
+            <input type="checkbox" name="vehicle" value="1" checked="checked"> labor <br>
+          </form>
         </form>
       </div>
     </div>
@@ -132,8 +138,9 @@
     <!-- jQuery library (necessary for Bootstrap & other JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-    <!-- Backstretch js plugin, for page background -->
+    <!-- Plug Ins -->
     <script src="../public/assets/js/backstretch_plugin.min.js"></script>
+    <script scr="../public/assets/js/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.min.js"></script>
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -143,14 +150,16 @@
     <script scr="../public/assets/js/search.js"></script>
 
     <script>
-      // To attach Backstrech as the jumbotron's background
+      // attach Backstretch as the jumbotron's background
       $(".jumbotron").backstretch("../public/assets/images/painting.jpg");
       $("#project-one").backstretch("../public/assets/images/cleaning.jpg");
       $("#project-two").backstretch("../public/assets/images/push-wheelchair.jpg");
       $("#project-three").backstretch("../public/assets/images/raking-leaves.jpg");
     </script>
+
     <script type="text/javascript">
-        $(".form_datetime").datetimepicker({format: 'mm-dd-yy hh:ii'});
+      // date and time
+      $(".form_datetime").datetimepicker({format: 'mm-dd-yy hh:ii'});
     </script>
 
 </body>
