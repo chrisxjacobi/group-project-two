@@ -86,9 +86,15 @@
     <div class="container-fluid" id="current-projects-row">
       <div class="row">
         <h2 class="text-center">current projects</h2>
-        <div class="col-sm-4 text-center" id="project-one"></div>
-        <div class="col-sm-4 text-center" id="project-two"></div>
-        <div class="col-sm-4 text-center" id="project-three"></div>
+        <div class="col-sm-4 text-center" id="project-one-pic">
+          <div id="info-one">
+            <p id="info-one-paragraph">
+              Here is some information about this project.
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-4 text-center" id="project-two-pic"></div>
+        <div class="col-sm-4 text-center" id="project-three-pic"></div>
 
       </div>
     </div>
@@ -152,9 +158,9 @@
     <script>
       // attach Backstretch as the jumbotron's background
       $(".jumbotron").backstretch("../public/assets/images/painting.jpg");
-      $("#project-one").backstretch("../public/assets/images/cleaning.jpg");
-      $("#project-two").backstretch("../public/assets/images/push-wheelchair.jpg");
-      $("#project-three").backstretch("../public/assets/images/raking-leaves.jpg");
+      $("#project-one-pic").backstretch("../public/assets/images/cleaning.jpg");
+      $("#project-two-pic").backstretch("../public/assets/images/push-wheelchair.jpg");
+      $("#project-three-pic").backstretch("../public/assets/images/raking-leaves.jpg");
     </script>
 
     <script type="text/javascript">

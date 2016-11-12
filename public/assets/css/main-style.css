@@ -78,15 +78,25 @@ body {
   color: #494a4a;
   margin-bottom: 40px;
 }
-#project-one {
-  height: 100px;
+#project-one-pic {
+  height: 300px;
 }
-#project-two {
-  height: 100px;
+#info-one {
+  background-color: #494a4a;
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  font-size: 24px;
+}
+
+
+#project-two-pic {
+  height: 300px;
   margin-top: 0px
 }
-#project-three {
-  height: 100px;
+#project-three-pic {
+  height: 300px;
 }
 
 /*create projects row*/
