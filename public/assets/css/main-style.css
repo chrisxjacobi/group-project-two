@@ -58,10 +58,33 @@ body {
 }
 .jumbotron h1 {
   font-size: 100px;
+  margin-top: 40px;
 }
 /*Jumbotron - Short description about our app*/
 .jumbotron p {
   color: #fff;
   font-size: 24px;
+}
+/*search for project form within with jumbotron*/
+.form-inline {
+  margin-top: 20px;
+}
 
+/*current projects row*/
+#current-projects-row {
+  color: #494a4a;
+}
+#current-projects-row h2 {
+  color: #494a4a;
+  margin-bottom: 40px;
+}
+#project-one {
+  height: 100px;
+}
+#project-two {
+  height: 100px;
+  margin-top: 0px
+}
+#project-three {
+  height: 100px;
 }

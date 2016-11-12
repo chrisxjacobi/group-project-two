@@ -58,12 +58,54 @@
     <!-- jumbotron -->
     <div class="jumbotron text-left">
       <div class="container-fluid">
+        <!-- search for a project start -->
+        <div class="row">
+          <div class="col col-xs-12 col-search">
+            <form class="form-inline text-center">
+              <div class="form-group">
+                <label for="exampleInputName2">search for a project</label>
+                <input type="text" class="form-control" id="input-search" placeholder="ex: paint house">
+              </div>
+              <button type="submit" class="btn btn-primary">search</button>
+            </form>
+          </div>
+        </div>
+        <!-- search for a project end -->
         <h1>Be a Helpr</h1>
         <div id="app-statement">
           <p>
-            Helpr is an easy way to connect with those in need. Give your time, your talents, or financially to your local community.
+            Helpr is an easy way to connect with those in need. Give your time and your talent to your local community.
           </p>
         </div>
+      </div>
+    </div>
+
+    <!-- current projects row -->
+    <div class="container-fluid" id="current-projects-row">
+      <div class="row">
+        <h2 class="text-center">current projects</h2>
+        <div class="col-sm-4 text-center" id="project-one"></div>
+        <div class="col-sm-4 text-center" id="project-two"></div>
+        <div class="col-sm-4 text-center" id="project-three"></div>
+
+      </div>
+    </div>
+
+    <!-- current projects row -->
+    <div class="container-fluid" id="create-project-row">
+      <div class="row">
+        <h2 class="text-center">create a project</h2>
+        <form>
+          <div class="form-group">
+            <label for="formGroupExampleInput">name</label>
+            <input type="text" class="form-control" id="user-name" placeholder="your name">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">project name</label>
+            <input type="text" class="form-control" id="project-name" placeholder="paint grandma's house">
+          </div>
+          <input size="16" type="text" value="12-15-2016 4:00" readonly class="form_datetime">
+        </form>
       </div>
     </div>
 
@@ -96,9 +138,19 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+    <!-- JS file connections -->
+    <script scr="../public/assets/js/main.js"></script>
+    <script scr="../public/assets/js/search.js"></script>
+
     <script>
       // To attach Backstrech as the jumbotron's background
       $(".jumbotron").backstretch("../public/assets/images/painting.jpg");
+      $("#project-one").backstretch("../public/assets/images/cleaning.jpg");
+      $("#project-two").backstretch("../public/assets/images/push-wheelchair.jpg");
+      $("#project-three").backstretch("../public/assets/images/raking-leaves.jpg");
+    </script>
+    <script type="text/javascript">
+        $(".form_datetime").datetimepicker({format: 'mm-dd-yy hh:ii'});
     </script>
 
 </body>
