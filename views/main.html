@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Helpr</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed|Ubuntu+Mono" rel="stylesheet">
+    <!-- Theme CSS -->
+    <link href="../public/assets/css/main-style.css" rel="stylesheet">
+    <!-- date and time CSS -->
+    <link href="../public/assets/js/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Helpr</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#searchProjects">search projects</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#newProject">create new project</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#myProjects">log in</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- jumbotron -->
+    <div class="jumbotron text-left">
+      <div class="container-fluid">
+        <!-- search for a project start -->
+        <div class="row">
+          <div class="col col-xs-12 col-search">
+            <form class="form-inline text-center">
+              <div class="form-group">
+                <label for="exampleInputName2">search for a project</label>
+                <input type="text" class="form-control" id="input-search" placeholder="ex: paint house">
+              </div>
+              <button type="submit" class="btn btn-primary">search</button>
+            </form>
+          </div>
+        </div>
+        <!-- search for a project end -->
+        <h1>Be a Helpr</h1>
+        <div id="app-statement">
+          <p>
+            Helpr is an easy way to connect with those in need. Give your time and your talent to your local community.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- current projects row -->
+    <div class="container-fluid" id="current-projects-row">
+      <div class="row">
+        <h2 class="text-center">current projects</h2>
+        <div class="col-sm-4 text-center" id="project-one"></div>
+        <div class="col-sm-4 text-center" id="project-two"></div>
+        <div class="col-sm-4 text-center" id="project-three"></div>
+
+      </div>
+    </div>
+
+    <!-- current projects row -->
+    <div class="container-fluid" id="create-project-row">
+      <div class="row">
+        <h2 class="text-center">create a project</h2>
+        <form>
+          <div class="form-group">
+            <label for="formGroupExampleInput">name</label>
+            <input type="text" class="form-control" id="user-name" placeholder="your name">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">project name</label>
+            <input type="text" class="form-control" id="project-name" placeholder="paint grandma's house">
+          </div>
+          <input data-provide="datepicker" size="16" type="text" value="12-15-2016 4:00" readonly class="form_datetime">
+          <form action="demo_form.asp" method="get">
+            <input type="checkbox" name="vehicle" value="0"> organizer <br>
+            <input type="checkbox" name="vehicle" value="1" checked="checked"> labor <br>
+          </form>
+        </form>
+      </div>
+    </div>
+
+
+
+
+    <!-- copyright/links footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Group Project #2.</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://github.com/SarahReyes/group-project-two"><i class="fa fa-github"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery library (necessary for Bootstrap & other JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Plug Ins -->
+    <script src="../public/assets/js/backstretch_plugin.min.js"></script>
+    <script scr="../public/assets/js/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- JS file connections -->
+    <script scr="../public/assets/js/main.js"></script>
+    <script scr="../public/assets/js/search.js"></script>
+
+    <script>
+      // attach Backstretch as the jumbotron's background
+      $(".jumbotron").backstretch("../public/assets/images/painting.jpg");
+      $("#project-one").backstretch("../public/assets/images/cleaning.jpg");
+      $("#project-two").backstretch("../public/assets/images/push-wheelchair.jpg");
+      $("#project-three").backstretch("../public/assets/images/raking-leaves.jpg");
+    </script>
+
+    <script type="text/javascript">
+      // date and time
+      $(".form_datetime").datetimepicker({format: 'mm-dd-yy hh:ii'});
+    </script>
+
+</body>
+
+</html>

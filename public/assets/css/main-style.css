@@ -1,0 +1,100 @@
+/*COLORS:
+rgb(198, 198, 198, x.x) - light grey rgba
+rgb(255, 255, 255, x.x) - white rgba
+rgb(73, 74, 74, x.x) - dark grey rgba
+rgb(183, 236, 232, x.x) - blue rgba
+rgb(243, 51, 44, x.x) - red rgba
+----
+#c6c6c6 - light grey hex
+#fff - white hex
+#494a4a - dark grey hex
+#b7ece8 - blue hex
+#f3332c - red hex*/
+
+/*FONTS:
+font-family: 'Ubuntu', sans-serif;
+font-family: 'Ubuntu Condensed', sans-serif;
+font-family: 'Ubuntu Mono', monospace;*/
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #fff;
+}
+/****NAV BAR CENTER****/
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  background-color: #fff;
+}
+/****NAV BAR LINKS****/
+.navbar-default .navbar-nav>li>a {
+  background-color: #fff;
+  color: #f3332c;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #494a4a;
+    background-color: white;
+}
+/****NAV BAR NAME****/
+.navbar-default .navbar-brand {
+  background-color: #fff;
+  color: #f3332c;
+}
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+  color: #494a4a;
+  background-color: white;
+}
+/*Nav Bar - Ease in-and-out hover action*/
+.page-scroll {
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  -ms-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+/****JUMBOTRON****/
+.jumbotron {
+  background-image: url("../images/painting.jpg");
+  color: #fff;
+}
+.jumbotron h1 {
+  font-size: 100px;
+  margin-top: 40px;
+}
+/*Jumbotron - Short description about our app*/
+.jumbotron p {
+  color: #fff;
+  font-size: 24px;
+}
+/*search for project form within with jumbotron*/
+.form-inline {
+  margin-top: 20px;
+}
+
+/*current projects row*/
+#current-projects-row {
+  color: #494a4a;
+}
+#current-projects-row h2 {
+  color: #494a4a;
+  margin-bottom: 40px;
+}
+#project-one {
+  height: 100px;
+}
+#project-two {
+  height: 100px;
+  margin-top: 0px
+}
+#project-three {
+  height: 100px;
+}
+
+/*create projects row*/
+#create-project-row {
+  color: #494a4a;
+  border: 1px solid #494a4a;
+  border-radius: 5px;
+  margin-top: 30px;
+  /*margin-left: 10px;
+  margin-right: 10px;*/
+}
