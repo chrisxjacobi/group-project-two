@@ -26,24 +26,21 @@ var response = [{
 	projectName: "Paint Norma's Fence",
 	location: "675 Mairo St, Austin, TX 78748",
 	description: "paint a fence for norma, she is awesome",
-	date: 20170820,
-	time: "15:00:00",
+	dateTime: '2017-08-20 15:00',
 	role: "painter",
 	duration: 4
 }, {
 	projectName: "Austin Food Pantry",
 	location: "673 Mairo St, Austin, TX 78748",
 	description: "stock cans for the hungry",
-	date: 20170821,
-	time: "10:00:00",
+	dateTime: '2017-08-21 10:00',
 	role: "stocker",
 	duration: 2.5
 }, {
 	projectName: "file papers for a professor",
 	location: "671 Mairo St, Austin, TX 78748",
 	description: "file all the newest research for a sociology professor",
-	date: 20170822,
-	time: "12:00:00",
+	dateTime: '2017-08-22 12:00',
 	role: "filer",
 	duration: 3
 
