@@ -9,7 +9,9 @@ rgb(243, 51, 44, x.x) - red rgba
 #fff - white hex
 #494a4a - dark grey hex
 #b7ece8 - blue hex
-#f3332c - red hex*/
+#f3332c - red hex
+#C92D28 - click dark red hex
+*/
 
 /*FONTS:
 font-family: 'Ubuntu', sans-serif;
@@ -20,11 +22,17 @@ body {
   font-family: 'Ubuntu', sans-serif;
   background-color: #fff;
 }
-/****NAV BAR CENTER****/
+
+p {
+  margin: 20px;
+  font-size: 20px;
+}
+
+/*nav bar center*/
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
   background-color: #fff;
 }
-/****NAV BAR LINKS****/
+/*nav bar links*/
 .navbar-default .navbar-nav>li>a {
   background-color: #fff;
   color: #f3332c;
@@ -33,7 +41,7 @@ body {
     color: #494a4a;
     background-color: white;
 }
-/****NAV BAR NAME****/
+/*nav bar name*/
 .navbar-default .navbar-brand {
   background-color: #fff;
   color: #f3332c;
@@ -51,60 +59,107 @@ body {
   transition: color 0.3s ease;
 }
 
-/****JUMBOTRON****/
+/*jumbotron*/
 .jumbotron {
-  background-image: url("../images/painting.jpg");
   color: #fff;
+  padding-top: 60px;
 }
 .jumbotron h1 {
   font-size: 100px;
   margin-top: 40px;
-}
-/*Jumbotron - Short description about our app*/
-.jumbotron p {
   color: #fff;
+}
+/*jumbotron - description of our app*/
+.jumbotron p {
+  color: #f3332c;
   font-size: 24px;
 }
 /*search for project form within with jumbotron*/
 .form-inline {
   margin-top: 20px;
 }
+/*search button*/
+.btn-primary {
+  color: #fff;
+  background-color: #f3332c;
+  border-color: #f3332c;
+  margin-left: 10px;
+}
+.btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #C92D28;
+  border-color: #C92D28;
+}
+.btn-primary.focus, .btn-primary:focus, .btn-primary:hover {
+  color: #fff;
+  background-color: #C92D28;
+  border: none;
+  outline: none;
+}
+.btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover {
+  color: #fff;
+  background-color: #C92D28;
+  border-color: #C92D28;
+  outline: none;
+}
+/*END search button*/
 
 /*current projects row*/
 #current-projects-row {
-  color: #494a4a;
-}
-#current-projects-row h2 {
-  color: #494a4a;
-  margin-bottom: 40px;
-}
-#project-one-pic {
-  height: 300px;
-}
-#info-one {
-  background-color: #494a4a;
-  opacity: 0.5;
-  height: 100%;
-  width: 100%;
+  background-color: #b7ece8;
   color: #fff;
-  font-size: 24px;
 }
-
-
-#project-two-pic {
-  height: 300px;
-  margin-top: 0px
-}
-#project-three-pic {
-  height: 300px;
-}
-
-/*create projects row*/
-#create-project-row {
+#current-projects-row p {
   color: #494a4a;
-  border: 1px solid #494a4a;
-  border-radius: 5px;
+}
+#project-one-col {
+  height: 300px;
+}
+/*icons*/
+.fa {
+  font-size: 70px;
+  color: #f3332c;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+#project-two-col {
+  height: 300px;
+}
+#project-three-col {
+  height: 300px;
+}
+
+/*create project row*/
+#create-project-row {
+  color: #fff;
+  background-color: #f3332c;
   margin-top: 30px;
-  /*margin-left: 10px;
-  margin-right: 10px;*/
+  padding-bottom: 30px;
+}
+/*form that is within the create-project-row*/
+#project-name {
+  margin: auto;
+  width: 50%
+}
+#datetimepicker {
+  width: 30%
+}
+#description {
+  margin: 0 auto;
+  width: 50%
+}
+
+/*projects near you row*/
+#projects-near-you-row {
+  background-color: #b7ece8;
+  color: #494a4a;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  height: 500px;
+}
+
+/*footer*/
+.fa-github {
+  font-size: 40px;
+  margin: 0px;
 }
