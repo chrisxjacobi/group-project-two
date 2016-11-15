@@ -80,26 +80,26 @@ p {
 }
 /*search button*/
 .btn-primary {
-  color: #fff;
-  background-color: #f3332c;
-  border-color: #f3332c;
+  color: #f3332c;
+  background-color: #fff;
+  border-color: #fff;
   margin-left: 10px;
 }
 .btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary {
-  color: #fff;
-  background-color: #C92D28;
-  border-color: #C92D28;
+  color: #f3332c;
+  background-color: #DCDCDC;
+  border-color: #DCDCDC;
 }
 .btn-primary.focus, .btn-primary:focus, .btn-primary:hover {
-  color: #fff;
-  background-color: #C92D28;
+  color: #f3332c;
+  background-color: #DCDCDC;
   border: none;
   outline: none;
 }
 .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover {
-  color: #fff;
-  background-color: #C92D28;
-  border-color: #C92D28;
+  color: #f3332c;
+  background-color: #DCDCDC;
+  border-color: #DCDCDC;
   outline: none;
 }
 /*END search button*/
@@ -147,6 +147,10 @@ p {
 #description {
   margin: 0 auto;
   width: 50%
+}
+/*project submit btn*/
+#project-submit {
+  margin-top: 20px;
 }
 
 /*projects near you row*/
