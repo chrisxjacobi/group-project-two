@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3 text-center>Helpr project locations</h3>
+    <div id="map"></div>
+    <style>
+    html, body #mapcanvas{
+    	width:50%;
+    	border: 1px solid black;
+    }
+    </style>
+    <script>
+      function initMap() {
+        var austin = {lat: 30.2672, lng: -97.7431};
+        var proj1  ={}
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: austin
+        });
+        var marker = new google.maps.Marker({
+          position: austin,
+          map: map
+        });
+      
+     
+      google.maps.event.addDomListener(window, 'load', initialize);
+       }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjvYa_MzHkCVuphNlFW4s9xp1HpPuta_o&callback=initMap">
+    </script>
+  </body>
+</html>
