@@ -137,16 +137,9 @@ p {
   padding-bottom: 30px;
 }
 /*form that is within the create-project-row*/
-#project-name {
-  margin: auto;
-  width: 50%
-}
-#datetimepicker {
-  width: 30%
-}
-#description {
+#description, #location, #date-time, #project-name {
   margin: 0 auto;
-  width: 50%
+  width: 50%;
 }
 /*project submit btn*/
 #project-submit {

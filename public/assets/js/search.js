@@ -9,11 +9,36 @@
 
 //create search container
 $(document).ready(function() {
-var searchContainer = $('<div class="container container-search" style="background-color: orange; height: 6em;"><div class="row"><div class="col col-xs-12 col-search"></div></div></div>');
 
-$('.jumbotron').after(searchContainer);
+// *****REYES QUERY CODE START*****
+$('#project-submit').on('click', function() {
+	console.log("I clicked");
+	// create projects submit api call
+	var addProject = {
+		project_name: $('#project-name').val().trim(),
+		project_date_time: $('#date-time').val().trim(), //with a function done to it to convert it to our standard format
+		project_location: $('#location').val().trim(), //maybe use google geolocator if we get there
+		project_description: $('#description').val().trim(),
+		project_role: $('#roles').val(),
+		project_duration: $('#duration').val().trim() //s/b a float
+	};
 
-$('.col-search').html('<h2>search-results</h2>');
+	var projectParams = $.param(addProject);
+	console.log(projectParams);
+
+	// addNewProject();
+});
+function addNewProject() {
+	// sequelize code for adding to the database
+}
+// *****REYES QUERY CODE END*****
+
+
+// var searchContainer = $('<div class="container container-search" style="background-color: orange; height: 6em;"><div class="row"><div class="col col-xs-12 col-search"></div></div></div>');
+//
+// $('.jumbotron').after(searchContainer);
+//
+// $('.col-search').html('<h2>search-results</h2>');
 
 //search for projects api call
 
@@ -57,29 +82,15 @@ $.get(currentUrl + '/helpr/search?' + searchTerm,
 		console.log(response);
 	//response should be an array with objects inside
 		for(var i = 0; i < response.length; i++) {
-			var results = $('<div><h3>' + response[i].project_name + '</h3><h4>' + response[i].role + '</h4><p>' + response[i].date + ' &bull; ' + response[i].time + '</p><p>' + response[i].location + '</p>' + '<div>map</div><p>' + response[i].description + '</p></div>');
+			var results = $('<div><h3>' + response[i].project_name + '</h3><h4>' + response[i].project_role + '</h4><p>' + response[i].project_date_time + '</p><p>' + response[i].project_location + '</p>' + '<div>map</div><p>' + response[i].project_description + '</p></div>');
 			$('.col-search').append(results);
 		}
-	} /* ); */
+	});
 callback(null, response);
-
-// create projects submit api call
-
-var addProject = {
-	project_name: $('#project-name').val().trim(),
-	project_date_time: $('#date-time').val().trim(), //with a function done to it to convert it to our standard format
-	project_location: $('#location').val().trim(), //maybe use google geolocator if we get there
-	project_description: $('#description').val().trim(),
-	project_role: $('#roles').val(),
-	project_duration: $('#duration').val().trim() //s/b a float
-	
-}
-
-var projectParams = $.param(addProject);
 
 $.get(currentUrl + '/helpr/addproj?' + projectParams, function(err, data) {
 	//if(err) throw err;
-	console.log(data)
+	console.log(data);
 }); //get add proj
 
 //render add yourself to a project fields in the html
@@ -93,12 +104,12 @@ var addDoer = {
 	project_name: $('#proj-volunteer-input').val(),
 	volunteer_name: $('#volunteer-name-input').val().trim(),
 	project_role: $('#roles').val()
-}
+};
 
 var doerParams = $.param(addDoer);
 $.get(currentUrl + '/helpr/help?' + doerParams, function(err, data) {
 	//if(err) throw err;
-	console.log(data)
+	console.log(data);
 }); //get add volunteer
 
 
