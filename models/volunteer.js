@@ -1,13 +1,30 @@
 'use strict';
 
 
+var Sequelize = require('sequelize')
+
+var connection = new Sequelize('volunteer_db', 'root', 'firsthost1');
+
 module.exports = function(sequelize, DataTypes) {
-  var Volunteer = sequelize.define('Volunteer', {
+  var Project = sequelize.define('Project', {
+    project_id: DataTypes.INTEGER,
+    project_name: DataTypes.STRING,
+    project_date_time: DataTypes.STRING,
+    project_location: DataTypes.STRING,
+    project_description: DataTypes.STRING,
+    project_role: DataTypes.STRING,
+    project_duration: DataTypes.DECIMAL
+
+    }, 
+
+  var Volunteer = sequqelize.define('Volunteer', {
+    volunteer_id: DataTypes.INTEGER,
     volunteer_name: DataTypes.STRING,
-    volunteer_project: DataTypes.STRING,
-    volunteer_type: DataTypes.STRING,
-    volunteer_contribution: DataTypes.INTEGER,
-    }, {
+    project_name: DataTypes.STRING,
+    project_role: DataTypes.STRING
+  })
+
+    {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
@@ -16,3 +33,8 @@ module.exports = function(sequelize, DataTypes) {
   });
   return Volunteer;
 };
+
+/*
+install seqeulize ()
+
+*/

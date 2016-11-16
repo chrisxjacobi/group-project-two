@@ -1,41 +1,48 @@
+DROP DATABASE IF EXISTS volunteer_db;
 CREATE DATABASE volunteer_db;
 
-USE volunteer_db;
-
 CREATE TABLE volunteer_db.Project(
-
 project_id INTEGER(11) AUTO_INCREMENT NOT NULL,
-project_name VARCHAR(30),
-project_date_time DATETIME(),
-project_location VARCHAR(30),
-project_description VARCHAR(30),
-project_role VARCHAR(30),
+project_name VARCHAR(100),
+project_date_time VARCHAR(16),
+project_location VARCHAR(100),
+project_description VARCHAR(100),
 project_duration DECIMAL(5, 2),
-PRIMARY KEY (project_id));
+PRIMARY KEY (project_id)
+);
 
-INSERT INTO volunteer_db.Project (project_id, project_name, project_date_time, project_location, project_description, project_role, project_duration)
-VALUES (NULL, 'Paint for Grandma', '2016-11-12 12:00:00', 'Austin', 'Help paint Grandma Jones' house', 'labor', 4);
+INSERT INTO volunteer_db.Project (project_name, project_date_time, project_location, project_description, project_duration)
+VALUES	('Paint for Grandma', '2016-11-12 12:00', 'Austin', 'Help paint Grandma Jones house', 4),
+('Turkey Jam 2016', '2016-11-27 15:00', 'Austin', 'Volunteer at the local food bank', 4),
+('Picnic Table Party', '2016-12-01 13:30', 'Austin', 'Help build picnic tables for the park', 5),
+('X-Mas to the Xtreme', '2016-12-25 09:00', 'Austin', 'Take pictures with Santa', 3);
 
 SELECT * FROM volunteer_db.Project;
 
 CREATE TABLE volunteer_db.Volunteer(
-
 volunteer_id INTEGER(11) AUTO_INCREMENT NOT NULL,
-FOREIGN KEY (project_id) REFERENCES volunteer_db.Project(project_id),
 volunteer_name VARCHAR(30),
-project_name VARCHAR(30),
-project_role VARCHAR(30));
-PRIMARY KEY (volunteer_id));
+volunteer_email VARCHAR(30), 
+PRIMARY KEY (volunteer_id)
+);
 
-INSERT INTO volunteer_db.Volunteer (volunteer_id, volunteer_name, project_name, project_role)
-VALUES (NULL, 'Balthazar Longbottom', 'Paint for Grandma', 'labor')
-	   (NULL, 'Sting', 'Paint for Grandma', 'management'),
-	   (NULL, 'Yvonne', 'Paint for Grandma', 'management'),
-	   (NULL, 'Big George', 'Paint for Grandma', 'labor')
+INSERT INTO volunteer_db.Volunteer (volunteer_name, volunteer_email)
+VALUES	('Balthazar Longbottom', 'balth@gmail.com'),
+('Sting', 'sting@gmail.com'),
+('Yvonne', 'y-me@gmail.com'),
+('Big George', 'so-big@gmail.com');
 
-SELECT * FROM volunteer_db.Project;
 
-SELECT Project.project_id, project_name, volunteer.volunteer_name
+SELECT * FROM volunteer_db.Volunteer;
+
+/* CREATE TABLE volunteer_db.Linked(
+linked_id INTEGER AUTO_INCREMENT NOT NULL, 
+FOREIGN KEY (volunteer_id) REFERENCES (Volunteer.volunteer_id), 
+FOREIGN KEY (project_id) REFERENCES (Project.project_id), 
+PRIMARY KEY(linked_id)
+);
+
+SELECT Project.project_id, Volunteer.volunteer_id
 FROM Project
 INNER JOIN Volunteer
-ON Project.project_id=Volunteer.volunteer_name
+ON Project.project_id=Volunteer.volunteer_name; */
