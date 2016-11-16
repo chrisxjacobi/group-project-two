@@ -28,8 +28,9 @@ $('#project-submit').on('click', function() {
 
 	// addNewProject();
 });
-function addNewProject() {
-	// sequelize code for adding to the database
+function conjoin() {
+	// orm code for adding a project and a volunteer in union to the permanent inner join database
+
 }
 // *****REYES QUERY CODE END*****
 
@@ -40,7 +41,7 @@ function addNewProject() {
 //
 // $('.col-search').html('<h2>search-results</h2>');
 
-//search for projects api call
+//search for projects api call and display them in the search results
 
 
 var currentUrl = window.location.origin;
@@ -76,6 +77,7 @@ var response = [{
 $.get(currentUrl + '/helpr/search?' + searchTerm,
 	function callback(error, response) {
 		//if(error) throw error;
+		//in the callback hide the main page modules
 		$('.container-projects').hide();
 		$('.container-create').hide();
 		$('.container-nearby').hide();
@@ -88,6 +90,23 @@ $.get(currentUrl + '/helpr/search?' + searchTerm,
 	});
 callback(null, response);
 
+<<<<<<< HEAD
+// create projects submit api call, show modal with input success
+
+var addProject = {
+	project_name: $('#project-name').val().trim(),
+	project_date_time: $('#date-time').val().trim(), //with a function done to it to convert it to our standard format
+	project_location: $('#location').val().trim(), //maybe use google geolocator if we get there
+	project_description: $('#description').val().trim(),
+	project_role: $('#roles').val(),
+	project_duration: $('#duration').val().trim() //s/b a float
+
+}
+
+var projectParams = $.param(addProject);
+
+=======
+>>>>>>> ba9d2cce708df094f41ce06b78f3a38a4a3d68c2
 $.get(currentUrl + '/helpr/addproj?' + projectParams, function(err, data) {
 	//if(err) throw err;
 	console.log(data);
@@ -98,7 +117,7 @@ $.get(currentUrl + '/helpr/addproj?' + projectParams, function(err, data) {
 
 
 
-//add yourself to a project; volunteer
+//add yourself to a project; volunteer, show input success modal
 
 var addDoer = {
 	project_name: $('#proj-volunteer-input').val(),
