@@ -33,8 +33,11 @@ module.exports = function(sequelize, DataTypes) {
   });
   return Volunteer;
 };
+<<<<<<< HEAD
 
 /*
 install seqeulize ()
 
 */
+=======
+>>>>>>> b2cec48da5b828946410646765cab757ed62cebf
