@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,15 +15,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <!-- Custom Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed|Ubuntu+Mono" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="../public/assets/js/font-awesome-4.7.0/css/font-awesome.min.css">
     <!-- Theme CSS -->
     <link href="../public/assets/css/main-style.css" rel="stylesheet">
-    <!-- date and time CSS -->
-    <link href="../public/assets/js/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <!-- date and time picker -->
+    <link rel="stylesheet" type="text/css" href="../public/assets/js/datetimepicker-master/jquery.datetimepicker.css"/ >
 
-</head>
+  </head>
 
-<body id="page-top" class="index">
-
+  <body id="page-top" class="index">
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container-fluid">
@@ -45,7 +46,7 @@
                         <a class="page-scroll" href="#searchProjects">search projects</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#newProject">create new project</a>
+                        <a class="page-scroll" href="#newProject">create a project</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#myProjects">log in</a>
@@ -65,7 +66,7 @@
           <div class="col col-xs-12 col-search">
             <form class="form-inline text-center">
               <div class="form-group">
-                <label for="exampleInputName2">search for a project</label>
+                <label for="input-search"></label>
                 <input type="text" class="form-control" id="input-search" placeholder="ex: paint house">
               </div>
               <button type="submit" class="btn btn-primary">search</button>
@@ -74,62 +75,98 @@
         </div>
         <!-- search for a project end -->
         <h1>Be a Helpr</h1>
-        <div id="app-statement">
-          <p>
-            Helpr is an easy way to connect with those in need. Give your time and your talent to your local community.
-          </p>
-        </div>
+        <div id="app-statement"></div>
       </div>
     </div>
 
     <!-- current projects row -->
     <div class="container-fluid" id="current-projects-row">
       <div class="row">
-        <h2 class="text-center">current projects</h2>
-        <div class="col-sm-4 text-center" id="project-one"></div>
-        <div class="col-sm-4 text-center" id="project-two"></div>
-        <div class="col-sm-4 text-center" id="project-three"></div>
+        <!-- <h2 class="text-center">current projects</h2> -->
+        <div class="col-sm-4 text-center" id="project-one-col">
+          <div id="project-one-info">
+            <i class="fa fa-leaf" aria-hidden="true"></i>
+            <p>Be a Helpr to a neighbor in need of yard work.</p>
+          </div>
+        </div>
+        <div class="col-sm-4 text-center" id="project-two-col">
+          <div id="project-two-info">
+            <i class="fa fa-paint-brush" aria-hidden="true"></i>
+            <p>Find a Helpr for that big painting project for grandma's house.</p>
 
+          </div>
+        </div>
+        <div class="col-sm-4 text-center" id="project-three-col">
+          <div id="project-three-info">
+            <i class="fa fa-handshake-o" aria-hidden="true"></i>
+            <p>Be a Helpr to support those in your local community.</p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- current projects row -->
+    <!-- create a project row -->
     <div class="container-fluid" id="create-project-row">
-      <div class="row">
-        <h2 class="text-center">create a project</h2>
-        <form>
-          <div class="form-group">
-            <label for="formGroupExampleInput">name</label>
-            <input type="text" class="form-control" id="user-name" placeholder="your name">
-          </div>
-          <div class="form-group">
-            <label for="formGroupExampleInput2">project name</label>
-            <input type="text" class="form-control" id="project-name" placeholder="paint grandma's house">
-          </div>
-          <input data-provide="datepicker" size="16" type="text" value="12-15-2016 4:00" readonly class="form_datetime">
-          <form action="demo_form.asp" method="get">
-            <input type="checkbox" name="vehicle" value="0"> organizer <br>
-            <input type="checkbox" name="vehicle" value="1" checked="checked"> labor <br>
-          </form>
-        </form>
+      <!-- <form action="demo_form.asp" method="get" id="roles"> -->
+        <div class="form-group row text-center">
+          <div class="col-xs-12">
+            <h3>create a project</h3>
+            <input type="text" class="form-control" id="project-name" placeholder="project name">
+          </div><!-- col-xs-12 -->
+        </div><!-- form group row -->
+        <div class="form-group row text-center">
+          <div class="col-xs-12">
+          <h3>select a date and time</h3>
+            <input type="text" class="form-control" id="date-time" placeholder="11/23/16   2:00pm">
+          </div><!-- col-xs-12 -->
+        </div><!-- row form-group -->
+        <div class="form-group row text-center">
+          <div class="col-xs-12">
+            <h3>duration of project</h3>
+            <label class="checkbox-inline"><input type="checkbox" value="1" id="duration"> one hour</label>
+            <label class="checkbox-inline"><input type="checkbox" value="2" id="duration"> two hours</label>
+            <label class="checkbox-inline"><input type="checkbox" value="3" id="duration"> three hours</label>
+            <label class="checkbox-inline"><input type="checkbox" value="4" id="duration"> four hours</label>
+          </div><!-- col-xs-12 -->
+        </div><!-- row form-group -->
+        <div class="form-group row text-center" id="location">
+          <div class="col-xs-12">
+            <h3>location</h3>
+            <input type="text" class="form-control" id="location" placeholder="Austin, TX">
+          </div><!-- col-xs-12 -->
+        </div><!-- row form-group -->
+        <div class="form-group row text-center">
+          <div class="col-xs-12">
+            <label for="comment"><h3>project description</h3></label>
+            <textarea class="form-control" rows="3"  id="description"></textarea>
+          </div><!-- col-xs-12 -->
+        </div><!-- row form-group -->
+        <div class="form-group row text-center" id="project-submit">
+          <div class="col-xs-12">
+            <button type="button" class="btn btn-large btn-primary" id="project-submit">submit</button>
+          </div><!-- col-xs-12 -->
+        </div><!-- row form-group -->
+      <!-- </form> -->
+    </div><!-- container create-project-row -->
+
+    <!-- projects near you -->
+    <div class="container-fluid" id="projects-near-you-row">
+      <h2 class="text-center">projects near you</h2>
+      <div class="form-group row">
       </div>
     </div>
 
-
-
-
-    <!-- copyright/links footer -->
+    <!-- footer -->
     <footer>
-        <div class="container">
+        <div class="container-fluid text-center">
             <div class="row">
-                <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Group Project #2.</span>
+                <div class="col-md-6 text-center">
+                    <span class="copyright">Copyright &copy; Team Helpr</span>
                 </div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li><a href="https://github.com/SarahReyes/group-project-two"><i class="fa fa-github"></i></a>
-                        </li>
-                    </ul>
+                <div class="col-md-6">
+                  <ul class="list-inline social-buttons">
+                    <a href="https://github.com/SarahReyes/group-project-two" target="_blank"><i class="fa fa-github"></i></a>
+                  </ul>
                 </div>
             </div>
         </div>
@@ -137,31 +174,18 @@
 
     <!-- jQuery library (necessary for Bootstrap & other JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-    <!-- Plug Ins -->
-    <script src="../public/assets/js/backstretch_plugin.min.js"></script>
-    <script scr="../public/assets/js/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.min.js"></script>
-
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
     <!-- JS file connections -->
-    <script scr="../public/assets/js/main.js"></script>
-    <script scr="../public/assets/js/search.js"></script>
+    <script type="text/javascript" src="../public/assets/js/main.js"></script>
+    <script type="text/javascript" src="../public/assets/js/search.js"></script>
+    <!-- Moment JS Plug in -->
+    <script type="text/javascript" src="../public/assets/js/moment.min.js"></script>
+    <!-- Backstretch Plug In -->
+    <script type="text/javascript" src="../public/assets/js/backstretch_plugin.min.js"></script>
+    <!-- Date/Time Plug In -->
+    <script src="../public/assets/js/datetimepicker-master/build/jquery.datetimepicker.full.min.js"></script>
 
-    <script>
-      // attach Backstretch as the jumbotron's background
-      $(".jumbotron").backstretch("../public/assets/images/painting.jpg");
-      $("#project-one").backstretch("../public/assets/images/cleaning.jpg");
-      $("#project-two").backstretch("../public/assets/images/push-wheelchair.jpg");
-      $("#project-three").backstretch("../public/assets/images/raking-leaves.jpg");
-    </script>
-
-    <script type="text/javascript">
-      // date and time
-      $(".form_datetime").datetimepicker({format: 'mm-dd-yy hh:ii'});
-    </script>
-
-</body>
+  </body>
 
 </html>
