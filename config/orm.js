@@ -1,7 +1,6 @@
 
 var connection = require('connection.js');
-
-// In the orm.js file, create the methods that will execute the necessary MySQL commands in the controllers. These are the methods you will need to use in order to retrieve and store data in your database.
+var util = require('util');
 
 function printQuestionMarks(num) {
 	var arr = [];
@@ -52,7 +51,6 @@ var orm = {
 		});
 	},
 		// objColVals would be the columns and values that you want to update
-		// an example of objColVals would be {name: panther, sleepy: true}
 	update: function (table, objColVals, condition, cb) {
 		var queryString = 'UPDATE ' + table;
 
@@ -67,15 +65,17 @@ var orm = {
 			cb(result);
 		});
 	},
-
-	join: function(table, objColVals, cb) {
-		var queryString = 'INNER JOIN' + table;
-		// 'INNER JOIN volunteer_db ON (Project.project_id = volunteer_db.project_id AND Volunteer.volunteer_id = volunteer_db.volunteer_id) ';
-
-		queryString = queryString + ;
-		queryString = queryString + ;
-		queryString = queryString + ;
-		queryString = queryString + ;
+	//proj is a jquery input to the sql that tells us WHICH project to join with the vol input from the Volunteers table
+	//the vol input we get should be the volunteer_id of the person who is logged in
+	//the proj input is the project_id of the project selected
+	//that represents the user who is logged in
+	join: function(proj, vol) {
+		var queryString = 'SELECT Project.project_id FROM Project CROSS JOIN Volunteer.' + vol + ' WHERE Project.project_id = ' + proj;
+		console.log(queryString);
+		connection.query(queryString, [proj], [vol], function(err, res){
+			if(err) throw err;
+			console.log('res obj from join \n\n' + util.inspect(res) + '\n\n end res obj');
+		});
 	}
 };
 
