@@ -1,0 +1,8 @@
+
+showAllProj - result object is going to have all SQL data from the Projects table AND select the volunteer in question from the volunteer table
+
+addProj - adds to the Project table, result ojbect is just a confirmation that it worked
+
+joinProj - first we get ALL data from showAllProj and import it into the DOM with jquery with showAllProj.  the click event in the dom (join this project) triggers the jquery to pick out the rows with the joined project and the volunteer/user back to the sql through the orm/controller create the proj and vol row in the join table
+
+take one of the functions and try to connect it to the controller

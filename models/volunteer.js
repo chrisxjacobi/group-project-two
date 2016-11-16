@@ -1,43 +1,34 @@
-'use strict';
+// 'use strict';
+//
+//
+// module.exports = function(sequelize, DataTypes) {
+//   var Volunteer = sequelize.define('Volunteer', {
+//     volunteer_name: DataTypes.STRING,
+//     volunteer_project: DataTypes.STRING,
+//     volunteer_type: DataTypes.STRING,
+//     volunteer_contribution: DataTypes.INTEGER,
+//     }, {
+//     classMethods: {
+//       associate: function(models) {
+//         // associations can be defined here
+//       }
+//     }
+//   });
+//   return Volunteer;
+// };
 
 
-var Sequelize = require('sequelize')
 
-var connection = new Sequelize('volunteer_db', 'root', 'firsthost1');
+var orm = require('../config/orm.js');
 
-module.exports = function(sequelize, DataTypes) {
-  var Project = sequelize.define('Project', {
-    project_id: DataTypes.INTEGER,
-    project_name: DataTypes.STRING,
-    project_date_time: DataTypes.STRING,
-    project_location: DataTypes.STRING,
-    project_description: DataTypes.STRING,
-    project_role: DataTypes.STRING,
-    project_duration: DataTypes.DECIMAL
 
-    }, 
-
-  var Volunteer = sequqelize.define('Volunteer', {
-    volunteer_id: DataTypes.INTEGER,
-    volunteer_name: DataTypes.STRING,
-    project_name: DataTypes.STRING,
-    project_role: DataTypes.STRING
-  })
-
-    {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
+var volunteer = {
+    joinProj: function (cb) {
+        orm.joinProj(proj, vol, function (res) {
+            cb(res);
+        });
     }
-  });
-  return Volunteer;
 };
 <<<<<<< HEAD
 
-/*
-install seqeulize ()
-
-*/
-=======
->>>>>>> b2cec48da5b828946410646765cab757ed62cebf
+module.exports = volunteer;
