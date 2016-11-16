@@ -5,7 +5,7 @@
 	4.  sign up for projects submit api call /helpr/help?
 */
 
-
+//just a comment
 
 //create search container
 $(document).ready(function() {
