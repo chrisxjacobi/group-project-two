@@ -35,14 +35,9 @@ VALUES	('Balthazar Longbottom', 'balth@gmail.com'),
 
 SELECT * FROM volunteer_db.Volunteer;
 
-/* CREATE TABLE volunteer_db.Linked(
+CREATE TABLE volunteer_db.Linked(
 linked_id INTEGER AUTO_INCREMENT NOT NULL, 
-FOREIGN KEY (volunteer_id) REFERENCES (Volunteer.volunteer_id), 
-FOREIGN KEY (project_id) REFERENCES (Project.project_id), 
+vol_id INTEGER(11) NOT NULL, 
+proj_id INTEGER(11) NOT NULL, 
 PRIMARY KEY(linked_id)
 );
-
-SELECT Project.project_id, Volunteer.volunteer_id
-FROM Project
-INNER JOIN Volunteer
-ON Project.project_id=Volunteer.volunteer_name; */

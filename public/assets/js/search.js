@@ -5,7 +5,7 @@
 	4.  sign up for projects submit api call /helpr/help?
 */
 
-
+//just a comment
 
 //create search container
 $(document).ready(function() {
@@ -26,6 +26,7 @@ $('#project-submit').on('click', function() {
 	var projectParams = $.param(addProject);
 	console.log(projectParams);
 
+//search for projects api call and display them in the search results
 	// addNewProject();
 });
 function addNewProject() {
@@ -89,8 +90,12 @@ $.get(currentUrl + '/helpr/search?' + searchTerm,
 	});
 callback(null, response);
 
+<<<<<<<
+// create projects submit api call, show modal with input success
+=======
 <<<<<<< HEAD
 // create projects submit api call, show modal with input success
+>>>>>>>
 
 var addProject = {
 	project_name: $('#project-name').val().trim(),
