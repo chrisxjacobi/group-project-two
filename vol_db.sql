@@ -41,8 +41,3 @@ vol_id INTEGER(11) NOT NULL,
 proj_id INTEGER(11) NOT NULL, 
 PRIMARY KEY(linked_id)
 );
-
-SELECT Project.project_id, Volunteer.volunteer_id
-FROM Project
-INNER JOIN Volunteer
-ON Project.project_id=Volunteer.volunteer_name; */
