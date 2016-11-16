@@ -79,6 +79,9 @@ p {
   margin-top: 20px;
 }
 /*search button*/
+#show-all-proj {
+  margin: 2em 0;
+}
 .btn-primary {
   color: #f3332c;
   background-color: #fff;
