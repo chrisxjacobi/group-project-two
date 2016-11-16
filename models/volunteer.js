@@ -29,5 +29,6 @@ var volunteer = {
         });
     }
 };
+<<<<<<< HEAD
 
 module.exports = volunteer;
