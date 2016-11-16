@@ -15,7 +15,7 @@ $('.jumbotron').after(searchContainer);
 
 $('.col-search').html('<h2>search-results</h2>');
 
-//search for projects api call
+//search for projects api call and display them in the search results
 
 
 var currentUrl = window.location.origin;
@@ -51,6 +51,7 @@ var response = [{
 $.get(currentUrl + '/helpr/search?' + searchTerm,
 	function callback(error, response) {
 		//if(error) throw error;
+		//in the callback hide the main page modules
 		$('.container-projects').hide();
 		$('.container-create').hide();
 		$('.container-nearby').hide();
@@ -63,7 +64,7 @@ $.get(currentUrl + '/helpr/search?' + searchTerm,
 	} /* ); */
 callback(null, response);
 
-// create projects submit api call
+// create projects submit api call, show modal with input success
 
 var addProject = {
 	project_name: $('#project-name').val().trim(),
@@ -87,7 +88,7 @@ $.get(currentUrl + '/helpr/addproj?' + projectParams, function(err, data) {
 
 
 
-//add yourself to a project; volunteer
+//add yourself to a project; volunteer, show input success modal
 
 var addDoer = {
 	project_name: $('#proj-volunteer-input').val(),
