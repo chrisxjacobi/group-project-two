@@ -29,8 +29,9 @@ $('#project-submit').on('click', function() {
 //search for projects api call and display them in the search results
 	// addNewProject();
 });
-function addNewProject() {
-	// sequelize code for adding to the database
+function conjoin() {
+	// orm code for adding a project and a volunteer in union to the permanent inner join database
+
 }
 // *****REYES QUERY CODE END*****
 
@@ -90,12 +91,8 @@ $.get(currentUrl + '/helpr/search?' + searchTerm,
 	});
 callback(null, response);
 
-<<<<<<<
-// create projects submit api call, show modal with input success
-=======
 <<<<<<< HEAD
 // create projects submit api call, show modal with input success
->>>>>>>
 
 var addProject = {
 	project_name: $('#project-name').val().trim(),
@@ -104,7 +101,7 @@ var addProject = {
 	project_description: $('#description').val().trim(),
 	project_role: $('#roles').val(),
 	project_duration: $('#duration').val().trim() //s/b a float
-	
+
 }
 
 var projectParams = $.param(addProject);
