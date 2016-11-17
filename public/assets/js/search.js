@@ -7,11 +7,15 @@
 
 //just a comment
 
+//get the current url for all api calls
+	var currentUrl = window.location.origin;
+	console.log(currentUrl);
+
 //***NEW STUFF TO ADD TO SQL FETCHING FILES *** volunteerID should be equal to the logged in user's primary key in the Volunteer table; perhaps a select statement added to orm file and called inside the showAllProj orm function that selects only the user currently using from the table like 'SELECT volunteer_id from Volunteer where login = true' in which case we would need to add a login true boolean to the Volunteer table and figure out a way to toggle it with the oauth login
 	var volunteerID = 1;
 function showAllProj() {
 	// get api call to get all the projects from the sql, orm, model, and controller and the callback displays them
-		$.get(currentUrl + '/helpr/search?', function callback(error, response) {
+		$.get(currentUrl + '/helpr/search?', function(error, response) {
 			if(error) throw error;
 			console.log('show view all projects response: \n\n' + response + '\n\n end view all projects response');
 			//hide the main page modules because the search results will take over
@@ -31,10 +35,6 @@ function showAllProj() {
 
 $(document).ready(function() {
 
-	//get the current url for all api calls
-	var currentUrl = window.location.origin;
-	console.log(currentUrl);
-
 	//onclick adds a new project
 	$('#project-submit').click(function() {
 		console.log("I clicked add a new project");
@@ -52,7 +52,7 @@ $(document).ready(function() {
 
 		//get api call to add a project through the controller, model, and orm to the sql
 
-		$.get(currentUrl + '/helpr/addproj?' + projectParams, function callback(error, response) {
+		$.get(currentUrl + '/helpr/addproj?' + projectParams, function(error, response) {
 			if(err) throw err;
 			console.log('if we"ve successfully entered a new project into sql we"ll get this non-null response is: \n\n' + response);
 		// *** ADD MODAL *** if we have a response we'll get a modal pop up telling us we actually added a project.
