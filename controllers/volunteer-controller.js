@@ -1,61 +1,41 @@
 var express = require('express');
 var router = express.Router();
-var Project = require('../models/volunteer.js';
+var Project = require('../models/project.js');
 
-//get route -> index
+// get route -> main.html
 router.get('/', function(req,res) {
-	res.redirect('/helpr')
+	// redirect to /helpr
+	res.redirect('/helpr');
 });
 
 // get route, edited to match sequelize
 router.get('/helpr', function(req,res) {
-	// replace old function with sequelize function
-	Volunteer.findAll()
-	// use promise method to pass the burgers...
-	.then(function(volunteer_data){
-		console.log(volunteer_data);
-		// into the main index, updating the page
-		return res.render('index', {volunteer_data})
-	})
+	// shows the main.html page, not sure how it connects though, this might be handlebars module?
+	res.render('main.html');
 });
 
-// post route to create burgers
-router.post('/helpr/addproj', function(req, res) {
-	// edited burger create to add in a burger_name
-	Volunteer.create({project_name: req.body.project_name})
-	// pass the result of our call
-	.then(function(newProject){
-		// log the result to our terminal/bash window
-		console.log(newProject);
-		// redirect
-		res.redirect('/');
+router.put('/helpr/addproj', function(req, res) {
+	project.addProj(req.body.project_name, req.body.project_date_time, req.body.project_location, req.body.project_description, req.body.project_duration, function(){
+		res.redirect('/helpr');
 	});
 });
 
-// put route to devour a burger
-router.put('helpr/search', function(req,res){
-	// update one of the burgers
-	Volunteer.findOne({where:{id: req.body.volunteer_id}})
-	.then(function(theproject){
-		return theBurger.updateAttributes({
-			devoured: true
-		}).then(function(){
-			// reload the page
-			res.redirect('/');
-		})
-	});
+router.put('/helpr/search', function(req,res) {
+	// show all projects when someone searches
+	project.showAllProj();
+	res.redirect('/helpr');
 });
 
 router.post('/helpr/help', function(req, res) {
-	// edited burger create to add in a burger_name
-	Volunteer.create({project_name: req.body.project_name})
-	// pass the result of our call
-	.then(function(newProject){
-		// log the result to our terminal/bash window
-		console.log(newProject);
-		// redirect
-		res.redirect('/');
+	// run the project model through the joinProj ORM
+	project.joinProj(function(){
+		// what needs to happen here?
 	});
+	// run the volunteer model through the joinProj ORM
+	volunteer.join(function(){
+		// what needs to happen here?
+	});
+	res.redirect('/helpr');
 });
 
 module.exports = router;

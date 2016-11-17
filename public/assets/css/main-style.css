@@ -9,7 +9,9 @@ rgb(243, 51, 44, x.x) - red rgba
 #fff - white hex
 #494a4a - dark grey hex
 #b7ece8 - blue hex
-#f3332c - red hex*/
+#f3332c - red hex
+#C92D28 - click dark red hex
+*/
 
 /*FONTS:
 font-family: 'Ubuntu', sans-serif;
@@ -20,11 +22,17 @@ body {
   font-family: 'Ubuntu', sans-serif;
   background-color: #fff;
 }
-/****NAV BAR CENTER****/
+
+p {
+  margin: 20px;
+  font-size: 20px;
+}
+
+/*nav bar center*/
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
   background-color: #fff;
 }
-/****NAV BAR LINKS****/
+/*nav bar links*/
 .navbar-default .navbar-nav>li>a {
   background-color: #fff;
   color: #f3332c;
@@ -33,7 +41,7 @@ body {
     color: #494a4a;
     background-color: white;
 }
-/****NAV BAR NAME****/
+/*nav bar name*/
 .navbar-default .navbar-brand {
   background-color: #fff;
   color: #f3332c;
@@ -51,50 +59,111 @@ body {
   transition: color 0.3s ease;
 }
 
-/****JUMBOTRON****/
+/*jumbotron*/
 .jumbotron {
-  background-image: url("../images/painting.jpg");
   color: #fff;
+  padding-top: 60px;
 }
 .jumbotron h1 {
   font-size: 100px;
   margin-top: 40px;
-}
-/*Jumbotron - Short description about our app*/
-.jumbotron p {
   color: #fff;
+}
+/*jumbotron - description of our app*/
+.jumbotron p {
+  color: #f3332c;
   font-size: 24px;
 }
 /*search for project form within with jumbotron*/
 .form-inline {
   margin-top: 20px;
 }
+/*search button*/
+#show-all-proj {
+  margin: 2em 0;
+}
+/*search button*/
+.btn-primary {
+  color: #f3332c;
+  background-color: #fff;
+  border-color: #fff;
+  margin-left: 10px;
+}
+.btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary {
+  color: #f3332c;
+  background-color: #DCDCDC;
+  border-color: #DCDCDC;
+}
+.btn-primary.focus, .btn-primary:focus, .btn-primary:hover {
+  color: #f3332c;
+  background-color: #DCDCDC;
+  border: none;
+  outline: none;
+}
+.btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover {
+  color: #f3332c;
+  background-color: #DCDCDC;
+  border-color: #DCDCDC;
+  outline: none;
+}
+/*END search button*/
 
 /*current projects row*/
 #current-projects-row {
+  background-color: #b7ece8;
+  color: #fff;
+}
+#current-projects-row p {
   color: #494a4a;
 }
-#current-projects-row h2 {
-  color: #494a4a;
-  margin-bottom: 40px;
+#project-one-col {
+  height: 300px;
 }
-#project-one {
-  height: 100px;
+/*icons*/
+.fa {
+  font-size: 70px;
+  color: #f3332c;
+  margin-top: 60px;
+  margin-bottom: 20px;
 }
-#project-two {
-  height: 100px;
-  margin-top: 0px
+#project-two-col {
+  height: 300px;
 }
-#project-three {
-  height: 100px;
+#project-three-col {
+  height: 300px;
 }
 
-/*create projects row*/
+/*create project row*/
 #create-project-row {
-  color: #494a4a;
-  border: 1px solid #494a4a;
-  border-radius: 5px;
+  color: #fff;
+  background-color: #f3332c;
   margin-top: 30px;
-  /*margin-left: 10px;
-  margin-right: 10px;*/
+  padding-bottom: 30px;
 }
+/*form that is within the create-project-row*/
+#description, #location, #date-time, #project-name {
+  margin: 0 auto;
+  width: 50%;
+}
+/*project submit btn*/
+#project-submit {
+  margin-top: 20px;
+}
+
+/*projects near you row*/
+#projects-near-you-row {
+  background-color: #b7ece8;
+  color: #494a4a;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  height: 500px;
+}
+
+/*footer*/
+.fa-github {
+  font-size: 40px;
+  margin: 0px;
+  
+}
+
+
