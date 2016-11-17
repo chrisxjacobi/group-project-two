@@ -17,6 +17,9 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed|Ubuntu+Mono" rel="stylesheet">
     <!-- font awesome -->
     <link rel="stylesheet" href="../public/assets/js/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- remodal - modal css -->		
+    <link rel="stylesheet" href="../node_modules/remodal/dist/remodal.css">
+
     <!-- Theme CSS -->
     <link href="../public/assets/css/main-style.css" rel="stylesheet">
     <!-- date and time picker -->
@@ -54,8 +57,7 @@
 
 
                     <li>
-                    <!-- href here should be the modal -->
-                        <a class="page-scroll" href="#myProjects">log in</a>
+                        <a class="page-scroll" href="#modlogin">log in</a>
                     </li>
 
 
@@ -139,7 +141,7 @@
         <div class="form-group row text-center" id="location">
           <div class="col-xs-12">
             <h3>location</h3>
-            <input type="text" class="form-control" id="location" placeholder="Austin, TX">
+            <input type="text" class="form-control" id="location" placeholder="101 E Cesar Chavez, Austin, TX 78701">
           </div><!-- col-xs-12 -->
         </div><!-- row form-group -->
         <div class="form-group row text-center">
@@ -168,7 +170,7 @@
         <div class="container-fluid text-center">
             <div class="row">
                 <div class="col-md-6 text-center">
-                    <span class="copyright">Copyright &copy; Team Helpr</span>
+                    <span class="copyright">copyright &copy; team helpr</span>
                 </div>
                 <div class="col-md-6">
                   <ul class="list-inline social-buttons">
@@ -179,12 +181,39 @@
         </div>
     </footer>
 
+    <!-- remodal login modal -->
+
+  <div class="remodal" data-remodal-id="modlogin">
+  	<button data-remodal-action="close" class="remodal-close"></button>
+  	<h2>log in with google</h2>
+  		<input type="email" class="form-control" placeholder="your google account" />
+
+  		<input type="password" class="form-control" placeholder="password" />
+  	<br>
+  	<button id="sign-up" data-remodal-action="cancel" class="remodal-cancel">sign up</button>
+  	<button id="sign-in" data-remodal-action="confirm" class="remodal-confirm">sign in</button>
+	</div>
+
+	<div class="remodal" data-remodal-id="add-proj-modal">
+  	<button data-remodal-action="close" class="remodal-close"></button>
+  	<h2>project successfully added</h2>
+  	<button data-remodal-action="cancel" class="remodal-cancel">okay</button>
+	</div>
+
+	<div class="remodal" data-remodal-id="join-proj-modal">
+  	<button data-remodal-action="close" class="remodal-close"></button>
+  	<h2>you have joined this project</h2>
+  	<button data-remodal-action="cancel" class="remodal-cancel">okay</button>
+	</div>
+
+
     <!-- jQuery library (necessary for Bootstrap & other JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
+    <!-- Latest compiled and minified bootstrap javascript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- JS file connections -->
     <script type="text/javascript" src="../public/assets/js/main.js"></script>
+    <script src="../node_modules/remodal/dist/remodal.min.js"></script>
     <script type="text/javascript" src="../public/assets/js/search.js"></script>
     <!-- Moment JS Plug in -->
     <script type="text/javascript" src="../public/assets/js/moment.min.js"></script>

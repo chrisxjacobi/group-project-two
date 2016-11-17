@@ -40,6 +40,7 @@ $(document).ready(function() {
 		// *** ADD MODAL *** if we have a response we'll get a modal pop up telling us we actually added a project.
 			if(response) {
 				console.log('fire modal with entry successful');
+				$('[data-remodal-id=add-proj-modal]').remodal().open();
 			} //add proj response if
 		}); // add proj get callback
 	});// add proj project submit
@@ -86,9 +87,19 @@ $(document).ready(function() {
 			console.log('this is the data from the joinproj callback: \n\n' + data + '\n\n end data from the joinproj callback');
 			if(data) {
 				//*** ADD *** input successful modal, once the input is successful we return to the search results, maybe the button changes color in the css
+				$('[data-remodal-id=join-proj-modal]').remodal().open();
 			}
 		}); //joinproj callback
 	}); //joinproj onclick function
+
+	$('#sign-up').click(function () {
+		window.location.href = 'http://accounts.google.com/';
+	});//sign-up click event
+
+	$('#sign-in').click(function() {
+		console.log('sign-in clicked');
+		//oauth code
+	});//sign in  click event
 
 }); //document ready
 
