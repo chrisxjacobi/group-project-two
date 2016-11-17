@@ -26,7 +26,7 @@ var source = {
         port: 3306,
         host: 'localhost',
         user: 'root',
-        password: "firsthost1",
+        password: "reyes",
         database: "volunteer_db"
     },
     jawsDB: {
