@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Helpr</title>
+    <title>helpr</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -33,7 +33,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Helpr</a>
+                <a class="navbar-brand page-scroll" href="#page-top">helpr</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -43,14 +43,22 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#searchProjects">search projects</a>
+                        <a class="page-scroll" href="#view-projects">view projects</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#newProject">create a project</a>
+                        <a class="page-scroll" href="#create-project-row">create a project</a>
                     </li>
+										<li>
+                        <a class="page-scroll" href="#projects-near-you-row">near me</a>
+                    </li>	
+
+
                     <li>
+                    <!-- href here should be the modal -->
                         <a class="page-scroll" href="#myProjects">log in</a>
                     </li>
+
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -60,11 +68,11 @@
 
     <!-- jumbotron -->
     <div class="jumbotron">
-      <div class="container-fluid bkgrnd">
+      <div class="container-fluid bkgrnd" id="view-projects">
         <!-- search for a project start -->
         <div class="row">
           <div class="col col-xs-12 col-search text-center">
-            <h1>Be a Helpr</h1>
+            <h1>be a helpr</h1>
           </div>
           <div class="col col-xs-12 col-search text-center">
             <!-- <form class="form-inline text-center">
@@ -72,18 +80,16 @@
                 <label for="input-search"></label>
                 <input type="text" class="form-control" id="input-search" placeholder="ex: paint house">
               </div> -->
-              <button type="button" class="btn btn-primary" id="show-all-proj">search projects</button>
+              <button type="button" class="btn btn-primary" id="show-all-proj">view projects</button>
             <!-- </form> -->
           </div>
         </div>
         <!-- search for a project end -->
       </div>
     </div>
-
-    <!-- current projects row -->
+    <!--
     <div class="container-fluid" id="current-projects-row">
       <div class="row">
-        <!-- <h2 class="text-center">current projects</h2> -->
         <div class="col-sm-4 text-center" id="project-one-col">
           <div id="project-one-info">
             <i class="fa fa-leaf" aria-hidden="true"></i>
@@ -104,7 +110,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- create a project row -->
     <div class="container-fluid" id="create-project-row">
