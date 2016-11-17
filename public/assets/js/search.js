@@ -32,7 +32,7 @@ $(document).ready(function() {
 		var projectParams = $.param(addProject);
 		console.log('project params is: ' + projectParams);
 
-		//get api call to add a project through the controller, model, and orm to the sql 
+		//get api call to add a project through the controller, model, and orm to the sql
 
 		$.get(currentUrl + '/helpr/addproj?' + projectParams, function callback(error, response) {
 			if(err) throw err;
@@ -77,7 +77,7 @@ $(document).ready(function() {
 		//create the obj to add the doer to the join table
 		var addDoer = {
 			proj_id: $(e.target).data('proj'),
-			vol_id: volunteerID 
+			vol_id: volunteerID
 		};
 		//parameterize the doer obj to send it to the controller
 		var doerParams = $.param(addDoer);

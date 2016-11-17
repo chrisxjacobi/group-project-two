@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Project = require('../models/volunteer.js');
-var orm = require('../config/orm.js');
+var Project = require('../models/project.js');
 
 // get route -> main.html
 router.get('/', function(req,res) {
@@ -12,7 +11,7 @@ router.get('/', function(req,res) {
 // get route, edited to match sequelize
 router.get('/helpr', function(req,res) {
 	// shows the main.html page, not sure how it connects though, this might be handlebars module?
-	res.render('main');
+	res.render('main.html');
 });
 
 router.put('/helpr/addproj', function(req, res) {
