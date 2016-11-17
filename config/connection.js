@@ -31,18 +31,25 @@ var source = {
     },
     jawsDB: {
         port: 3306,
-        host: 'l3855uft9zao23e2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-        user: 'm3jhaiifn50cvyni',
-        password: "x9y8zgizwm2uhmu9",
-        database: "qe10flu5xgw5h5sr"
+        host: 'enqhzd10cxh7hv2e.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+        user: 'vrdsx4gjrwv9518t',
+        password: 'tyk3nhgceash7x8n',
+        database: 'mtj5ryjsc0jyf8ha'
     }
 };
 
 // jawsdb-octagonal-72227
+// mysql://vrdsx4gjrwv9518t:tyk3nhgceash7x8n@enqhzd10cxh7hv2e.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/mtj5ryjsc0jyf8ha
 
 // connect your jawsDB connection with the mysql connection.
-var connection = mysql.createConnection(source.jawsDB);
+var connection;
 
+if (process.env.JAWSDB_URL) {
+    connection = mysql.createConnection(source.jawsDB);
+}
+else {
+    connection = mysql.createConnection(source.localhost);
+}
 
 
 // Replace the connection code here with one to connect to your JawsDB connection.
