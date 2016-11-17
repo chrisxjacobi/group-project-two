@@ -27,13 +27,13 @@ app.set('view engine', 'handlebars');
 
 var routes = require('./controllers/volunteer_controller.js');
 
-/*
+
 app.use('/', routes);
 app.use('/update', routes);
 app.use('/create', routes);
 
 
-// listen on port 3000
+listen on port 3000
 var port = process.env.PORT || 3000;
 app.listen(port);
 

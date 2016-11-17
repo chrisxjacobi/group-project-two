@@ -6,7 +6,7 @@ var orm = require('../config/orm.js');
 // get route -> main.html
 router.get('/', function(req,res) {
 	// redirect to /helpr
-	res.redirect('/helpr');
+	res.redirect('/helpr'); 
 });
 
 // get route, edited to match sequelize
