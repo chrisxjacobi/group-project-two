@@ -46,7 +46,7 @@ function showAllProj() {
 	
 			var imgResult = $('<div class="col col-xs-4 col-result-img"><img alt="project-related image" src="' + data.project[i].project_img + '" /></div>');
 			var textResult = $('<div class="indiv-results"><h3>' + data.project[i].project_name + '</h3><p>' + data.project[i].project_date_time + '</p><p>' + data.project[i].project_location + '</p><div>map</div><p>' + data.project[i].project_description + '</p></div>');
-			var volBtn = $('<button class="btn btn-large btn-primary join-up" type="button" data-proj="' + data.project[i].project_id + '">Volunteer Now</button>')
+			var volBtn = $('<button class="btn btn-large btn-primary join-up" type="button" data-proj="' + data.project[i].project_id + '" data-proj-name="' + data.project[i].project_name + '">Volunteer Now</button>')
 			textResult.append(volBtn);
 			results.append(imgResult);
 			results.append(textResult);
@@ -56,7 +56,27 @@ function showAllProj() {
 		} //show all proj for
 		var goBack = $('<div class="col col-xs-12 text-center"><button class="btn btn-large btn-primary back-btn" type="button" id="show-main">Go Back</button></div>');
 		$('#add-em-all').append(goBack);
+
+		$('#show-main').click(function() {
+			$('#current-projects-row').show();
+			$('#create-project-row').show();
+			$('#projects-near-you-row').show();
+			$('#add-em-all').hide();
+		}); //show-main onclick end
+
+
+		$('.join-up').click(function(e) {
+			console.log('join up click event has fired');
+			var yourEmail = $('#your-email').val().trim();
+			var projName = $(e.target).data('proj-name');
+			$('#modal-join').text('Thanks for volunteering!  You have joined the project ' + projName + '.  The email we have on record for you is ' + yourEmail + '.  We will contact you shortly with more details.');
+			var inst = $('[data-remodal-id=join-proj-modal]').remodal();
+			inst.open();
+		});//join up click event
 	}); // show all proj get
+
+
+
 } //show all proj function
 
 	//onclick adds a new project
@@ -98,36 +118,30 @@ function showAllProj() {
 	}); //show all proj on click of glyphicon section
 
 	//onclick to revert to the main page after viewing search results
-	$('#show-main').click(function() {
-		$('#current-projects-row').show();
-		$('#create-project-row').show();
-		$('#projects-near-you-row').show();
-		$('#add-em-all').hide();
-	}); //show-main onclick end
 
-	//onclick join up to send inputs via a get call to the controller to the model to the orm to add a row to the join table holding the relationships between the volunteers and the projects.
-	$('.join-up').click(function(e) {
-		//create the obj to add the doer to the join table
-		var addDoer = {
-			proj_id: $(e.target).data('proj'),
-			vol_id: volunteerID
-		};
-		//parameterize the doer obj to send it to the controller
-		var doerParams = $.param(addDoer);
-		//get call
-		$.get(currentUrl + '/helpr/help?' + doerParams, function(err, data) {
-			if(err) throw err;
-			console.log('this is the data from the joinproj callback: \n\n' + data + '\n\n end data from the joinproj callback');
-			if(data) {
-				//*** ADD *** input successful modal, once the input is successful we return to the search results, maybe the button changes color in the css
-				$('[data-remodal-id=join-proj-modal]').remodal().open();
-			}
-		}); //joinproj callback
-	}); //joinproj onclick function
+	//SINCE we're not logging in we don't need to do a join to persist your choice.  onclick join up to send inputs via a get call to the controller to the model to the orm to add a row to the join table holding the relationships between the volunteers and the projects.
+	// $('.join-up').click(function(e) {
+	// 	//create the obj to add the doer to the join table
+	// 	var addDoer = {
+	// 		proj_id: $(e.target).data('proj'),
+	// 		vol_id: volunteerID
+	// 	};
+	// 	//parameterize the doer obj to send it to the controller
+	// 	var doerParams = $.param(addDoer);
+	// 	//get call
+	// 	$.get(currentUrl + '/helpr/help?' + doerParams, function(err, data) {
+	// 		if(err) throw err;
+	// 		console.log('this is the data from the joinproj callback: \n\n' + data + '\n\n end data from the joinproj callback');
+	// 		if(data) {
+	// 			//*** ADD *** input successful modal, once the input is successful we return to the search results, maybe the button changes color in the css
+	// 			$('[data-remodal-id=join-proj-modal]').remodal().open();
+	// 		}
+	// 	}); //joinproj callback
+	// }); //joinproj onclick function
 
-	$('#sign-up').click(function () {
-		window.location.href = 'http://accounts.google.com/';
-	});//sign-up click event
+	// $('#sign-up').click(function () {
+	// 	window.location.href = 'http://accounts.google.com/';
+	// });//sign-up click event
 
 	$('#sign-in').click(function() {
 		console.log('sign-in clicked');
