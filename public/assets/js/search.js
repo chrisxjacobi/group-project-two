@@ -28,9 +28,11 @@ $(document).ready(function() {
 
 function showAllProj() {
 	// get api call to get all the projects from the sql, orm, model, and controller and the callback displays them
-	$.get(currentUrl + '/helpr/search?', function(error, response) {
-		if(error) throw error;
-		console.log('show view all projects response: \n\n' + response + '\n\n end view all projects response');
+	$.get(currentUrl + '/helpr/search?', function(error, response, data) {
+		//if(error) throw error;
+		console.log('data is ' + JSON.stringify(data));
+		console.log('data.project.length ' + data.responseText.project.length);
+		//console.log('show view all projects response: \n\n' + response + '\n\n end view all projects response');
 		//hide the main page modules because the search results will take over
 		$('#current-projects-row').hide();
 		$('#create-project-row').hide();
@@ -39,8 +41,8 @@ function showAllProj() {
 		var addEmAll = $('<div class="container-fluid" id="add-em-all"><div class="row"><div class="col col-xs-12" id="search-results"></div><div class="col col-xs-12"><button type="button" id="show-main">Go Back</button></div></div></div>');
 		$('.jumbotron').after(addEmAll);
 		//response should be an array with objects inside.  *** ADJUST FOR LOOP *** for actual response
-		for(var i = 0; i < response.length; i++) {
-			var results = $('<div class="indiv-results"><h3>' + response[i].project_name + '</h3><p>' + response[i].project_date_time + '</p><p>' + response[i].project_location + '</p><div>map</div><p>' + response[i].project_description + '</p><button class="join-up" type="button" data-proj="' + response[i].project_id + '">Volunteer Now</button></div>');
+		for(var i = 0; i < data.project.length; i++) {
+			var results = $('<div class="indiv-results"><h3>' + data.project[i].project_name + '</h3><p>' + data.project[i].project_date_time + '</p><p>' + data.project[i].project_location + '</p><div>map</div><p>' + data.project[i].project_description + '</p><button class="join-up" type="button" data-proj="' + data.project[i].project_id + '">Volunteer Now</button></div>');
 			$('#search-results').append(results);
 		} //show all proj for
 	}); // show all proj get
