@@ -58,12 +58,12 @@
 										<li>
                         <a class="page-scroll" href="#projects-near-you-row">near me</a>
                     </li>
-
-
                     <li>
-                        <a class="page-scroll" href="#modlogin">log in</a>
+                        <a class="page-scroll" id="log-in" href="#modlogin">log in</a>
                     </li>
-
+                    <li>
+                        <a class="page-scroll" id="hi" href="#modlogin"></a>
+                    </li>
 
                 </ul>
             </div>
@@ -94,6 +94,7 @@
       </div>
     </div>
 
+    <!-- description row -->
     <div class="container-fluid" id="current-projects-row">
       <div class="row">
         <div class="col-sm-4 text-center" id="project-one-col">
@@ -163,10 +164,12 @@
     </div><!-- container create-project-row -->
 
     <!-- projects near you -->
-    <div class="container-fluid" id="projects-near-you-row">
-      <h2 class="text-center">projects near you</h2>
-      <div class="form-group row">
-        <div id="map-canvas"></div>
+    <div class="container-fluid text-center" id="projects-near-you-row">
+      <div class="row">
+        <div class="col-xs-12">
+          <h3>projects near you</h3>
+          <div id="map-canvas"></div>
+        </div>
       </div>
     </div>
 
@@ -190,12 +193,11 @@
 
   <div class="remodal" data-remodal-id="modlogin">
   	<button data-remodal-action="close" class="remodal-close"></button>
-  	<h2>log in with google</h2>
-  		<input type="email" class="form-control" placeholder="your google account" />
+  	<h2>sign in</h2>
+  		<input type="text" id="your-name" class="form-control" placeholder="your name" />
 
-  		<input type="password" class="form-control" placeholder="password" />
+  		<input type="email" class="form-control" placeholder="email" />
   	<br>
-  	<button id="sign-up" data-remodal-action="cancel" class="remodal-cancel">sign up</button>
   	<button id="sign-in" data-remodal-action="confirm" class="remodal-confirm">sign in</button>
 	</div>
 
@@ -230,9 +232,9 @@
     <script src="assets/js/datetimepicker-master/build/jquery.datetimepicker.full.min.js"></script>
     <!-- google maps api -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATYfd6yuqcE9CkQb1xt4xSR4vOgFZHsJY&sensor=false"></script>
-    <script src="./maplogic/mapster.js"></script>
-    <script src="./maplogic/map-options.js"></script>
-    <script src="./maplogic/script.js"></script>
+    <script src="../maplogic/mapster.js"></script>
+    <script src="../maplogic/map-options.js"></script>
+    <script src="../maplogic/script.js"></script>
 
 
   </body>

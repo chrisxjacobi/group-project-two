@@ -66,6 +66,10 @@
   background: #fff;
 }
 
+#your-name {
+  margin-bottom: 5px;
+}
+
 .remodal.remodal-is-opening,
 .remodal.remodal-is-closing {
   -webkit-animation-duration: 0.3s;
