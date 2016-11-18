@@ -159,7 +159,37 @@ p {
   padding: 0px;
 }
 /*google map-canvas*/
+/*html{
+  height: 100%;
+}
+body{
+  height: 100%;
+  padding:0;
+  margin:15%,30%,15%,30%;
+}*/
+#map-canvas {
+  height: 400px;
+  width: 600px;
+  border: 1px solid black;
+}
 
+.col-result-img img {
+  height: 100%;
+  width: auto;
+}
+
+.col-result-img {
+  height: 100%;
+}
+
+.join-up {
+  margin-bottom: 1em;
+}
+
+.back-btn {
+  background-color: #f3332c;
+  color: white;
+}
 
 /*footer*/
 .fa-github {
