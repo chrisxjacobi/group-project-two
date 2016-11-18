@@ -14,10 +14,11 @@ PRIMARY KEY (project_id)
 );
 
 INSERT INTO Project (project_name, project_date_time, project_location, project_description, project_duration, project_img)
-VALUES	('Paint for Grandma', '2016-11-12 12:00', 'Austin', 'Help paint Grandma Jones house', 4, 'img/painting-small.jpg'),
-('Turkey Jam 2016', '2016-11-27 15:00', 'Austin', 'Volunteer at the local food bank', 4, 'img/turkey.jpg'),
-('Picnic Table Party', '2016-12-01 13:30', 'Austin', 'Help build picnic tables for the park', 5, 'img/picnic.jpg'),
-('X-Mas to the Xtreme', '2016-12-25 09:00', 'Austin', 'Take pictures with Santa', 3, 'img/christmas.jpg');
+VALUES	('Paint for Grandma', '2016-11-19 12:00', '2400 E OLTORF ST AUSTIN TX 78741', 'Help paint Grandma Jones house', 4, 'img/painting-small.jpg'),
+('Turkey Jam 2016', '2016-12-15 14:00', '200 CONGRESS AVE AUSTIN TX 78701', 'Pack meals at the homeless shelter', 4, 'img/turkey.jpg'),
+('Playground Fiesta', '2016-12-01 13:30', '2874 SHOAL CREST AVE AUSTIN TX 78705', 'Help repair broken playground equipment', 5, 'img/picnic.jpg'),
+('X-Mas to the Xtreme', '2016-12-25 09:00', '2244 DELLANA LN ROLLINGWOOD TX 78746 ', 'Pack meals for missionairies', 3, 'img/christmas.jpg'),
+('Clean up for the New Year', '2016-12-31 09:00', '5201 BERKMAN DR AUSTIN TX 78746 ', 'Cleaning up Bartholomew Park', 3, 'img/christmas.jpg');
 
 CREATE TABLE Volunteer(
 volunteer_id INTEGER(11) AUTO_INCREMENT NOT NULL,
@@ -38,4 +39,3 @@ linked_id INTEGER AUTO_INCREMENT NOT NULL,
 vol_id INTEGER(11) NOT NULL,
 proj_id INTEGER(11) NOT NULL,
 PRIMARY KEY(linked_id)
-);
