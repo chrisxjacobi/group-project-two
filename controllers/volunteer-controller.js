@@ -3,6 +3,7 @@ var router = express.Router();
 var project = require('../models/project.js');
 var util = require('util');
 
+
 // get route -> main.html
 router.get('/', function(req,res) {
 	// redirect to /helpr
@@ -22,7 +23,7 @@ router.put('/helpr/addproj', function(req, res) {
 });
 
 // show all projects when someone searches
-router.get('/helpr/search', function (req, res) {
+router.get('/helpr/search', function(req, res) {
 	project.showAllProj(function(data) {
 		var allProjects = { project: data };
 		console.log(allProjects);

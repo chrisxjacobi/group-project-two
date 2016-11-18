@@ -150,28 +150,16 @@ p {
   margin-top: 20px;
 }
 
-/*projects near you row*/
-#projects-near-you-row {
-  background-color: #b7ece8;
+/*google map-canvas*/
+#map-canvas {
   color: #494a4a;
   margin-top: 30px;
   margin-bottom: 60px;
   height: 500px;
+  padding: 0px;
 }
 /*google map-canvas*/
-/*html{
-	height: 100%;
-}
-body{
-	height: 100%;
-	padding:0;
-	margin:15%,30%,15%,30%;
-}*/
-#map-canvas {
-	height: 400px;
-	width: 600px;
-  border: 1px solid black;
-}
+
 
 /*footer*/
 .fa-github {
