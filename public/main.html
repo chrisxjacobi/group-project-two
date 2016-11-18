@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed|Ubuntu+Mono" rel="stylesheet">
     <!-- font awesome -->
     <link rel="stylesheet" href="assets/js/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!-- remodal - modal css -->		
+    <!-- remodal - modal css -->
     <!-- <link rel="stylesheet" href="../node_modules/remodal/dist/remodal.css"> -->
     <link rel="stylesheet" href="assets/css/remodal.css">
     <link rel="stylesheet" href="assets/css/remodal-style.css">
@@ -25,6 +25,9 @@
     <link href="assets/css/main-style.css" rel="stylesheet">
     <!-- date and time picker -->
     <link rel="stylesheet" type="text/css" href="assets/js/datetimepicker-master/jquery.datetimepicker.css"/ >
+    <!-- google maps api -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
 
   </head>
 
@@ -54,7 +57,7 @@
                     </li>
 										<li>
                         <a class="page-scroll" href="#projects-near-you-row">near me</a>
-                    </li>	
+                    </li>
 
 
                     <li>
@@ -163,6 +166,7 @@
     <div class="container-fluid" id="projects-near-you-row">
       <h2 class="text-center">projects near you</h2>
       <div class="form-group row">
+        <div id="map-canvas"></div>
       </div>
     </div>
 
@@ -224,6 +228,12 @@
     <script type="text/javascript" src="assets/js/backstretch_plugin.min.js"></script>
     <!-- Date/Time Plug In -->
     <script src="assets/js/datetimepicker-master/build/jquery.datetimepicker.full.min.js"></script>
+    <!-- google maps api -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATYfd6yuqcE9CkQb1xt4xSR4vOgFZHsJY&sensor=false"></script>
+    <script src="./maplogic/mapster.js"></script>
+    <script src="./maplogic/map-options.js"></script>
+    <script src="./maplogic/script.js"></script>
+
 
   </body>
 
