@@ -16,6 +16,15 @@
 
 
 $(document).ready(function() {
+	// log-in nav bar changes to log in name when you click sign-in
+	$('#hi').hide();
+	$('#sign-in').on('click', function(){
+		var userName = $('#your-name').val().trim();
+		console.log(userName);
+		$('#log-in').hide();
+		$('#hi').show();
+		$('#hi').html("Hi,  " + userName);
+	});
 
 function showAllProj() {
 	// get api call to get all the projects from the sql, orm, model, and controller and the callback displays them
