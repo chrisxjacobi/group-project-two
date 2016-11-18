@@ -28,11 +28,11 @@ var marker = map.addMarker({
     lat: 30.2672, 
     lng: -97.7431,
     visible: true,
-    content: 'Pack meals at homeless shelter, 2:00pm to 3:00pm, Saturday 12/15/2016',   
+    content: '<div id="m1"><h3>Pack meals at homeless shelter</h3>  <br>Date: Saturday 11/19/2015<br>Time: 2:00pm-4:00pm<br>Address: 501 E 8th St, Austin, TX 78701</div>',   
     icon: 'http://findicons.com/files/icons/951/google_maps/32/grocery.png'
 
       });
-
+//<br> <img src="..images/salvationarmy.jpg" style="width;100px;"
 var marker2 =map.addMarker({
 
              "lat" : 30.32289789999999,
