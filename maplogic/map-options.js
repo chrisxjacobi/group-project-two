@@ -5,13 +5,13 @@ mapster.MAP_OPTIONS = {
 		lat: 30.2672, 
 		lng: -97.7431
 	},
-	zoom: 13,
+	zoom: 13, 
 	disableDefaultUI: false,
 	scrollwheel: true,
 	draggable: true,
 	mapTypeId: google.maps.MapTypeId.HYBRID,
-	maxZoom: 16,
 	minZoom: 12,
+	maxZoom: 18,
 	zoomControlOptions:{
 		position: google.maps.ControlPosition.LEFT_BOTTOM,
 		style: google.maps.ZoomControlStyle.DEFAULT
