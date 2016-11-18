@@ -163,7 +163,18 @@ p {
 .fa-github {
   font-size: 40px;
   margin: 0px;
-  
 }
 
-
+/*google map-canvas*/
+html{
+	height: 100%;
+}
+body{
+	height: 100%;
+	padding:0;
+	margin:15%,30%,15%,30%;
+}
+#map-canvas {
+	height:100%;
+	width:100%;
+}

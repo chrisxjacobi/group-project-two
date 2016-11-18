@@ -21,14 +21,29 @@ router.put('/helpr/addproj', function(req, res) {
 	});
 });
 
-router.get('/helpr/search', function(req,res) {
-	// show all projects when someone searches
-	var projects = project.showAll();
-	//console.log("This is Projects!");
+// show all projects when someone searches
+router.get('/helpr/search', function (req, res) {
+	project.showAllProj(function(data) {
+		var allProjects = { project: data };
+		console.log(allProjects);
+		res.render('main.html', allProjects);
+	});
+
+// BURGER example
+// router.get('/burgers', function (req, res) {
+// 	burger.all(function (data) {
+// 		var allBurgers = { burger: data };
+// 		console.log(allBurgers);
+// 		res.render('index', allBurgers);
+// 	});
+// });
+
+	console.log("This is Projects!");
 	//console.log(projects);
-	//console.log('this is req.query ' + util.inspect(req.query));
-	res.end(projects);
-	//res.json(projects);
+	console.log('this is req.query ' + util.inspect(req.query));
+	// res.end(projects);
+	res.json(projects);
+	console.log("here is the projects: " + projects);
 });
 
 router.post('/helpr/help', function(req, res) {

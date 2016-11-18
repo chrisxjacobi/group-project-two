@@ -3,15 +3,15 @@ var connection = require('../config/connection.js');
 var util = require('util');
 
 var orm = {
-	showAllProj: function () {
+	showAllProj: function(cb) {
 		var queryString = 'SELECT * FROM Project;';
-		connection.query(queryString, function (err, result) {
+		connection.query(queryString, function(err, res) {
 			if (err) throw err;
 			console.log('Made database call');
 			/*console.log('result obj from showAllProj \n\n' + util.inspect(result) + '\n\n end result obj from showAllProj');*/
-			return result;
+			cb(res);
 		});
-		
+
 	},
 		//add project to the projects table
 	addProj: function (project_name, project_date_time, project_location, project_description, project_duration, cb) {
