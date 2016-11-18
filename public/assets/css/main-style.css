@@ -150,13 +150,13 @@ p {
   margin-top: 20px;
 }
 
-/*projects near you row*/
-#projects-near-you-row {
-  background-color: #b7ece8;
+/*google map-canvas*/
+#map-canvas {
   color: #494a4a;
   margin-top: 30px;
   margin-bottom: 60px;
   height: 500px;
+  padding: 0px;
 }
 /*google map-canvas*/
 /*html{
