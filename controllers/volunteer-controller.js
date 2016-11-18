@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var Project = require('../models/project.js');
+var project = require('../models/project.js');
+var util = require('util');
 
 // get route -> main.html
 router.get('/', function(req,res) {
@@ -20,10 +21,14 @@ router.put('/helpr/addproj', function(req, res) {
 	});
 });
 
-router.put('/helpr/search', function(req,res) {
+router.get('/helpr/search', function(req,res) {
 	// show all projects when someone searches
-	project.showAllProj();
-	res.redirect('/helpr');
+	var projects = project.showAll();
+	//console.log("This is Projects!");
+	//console.log(projects);
+	//console.log('this is req.query ' + util.inspect(req.query));
+	res.end(projects);
+	//res.json(projects);
 });
 
 router.post('/helpr/help', function(req, res) {
