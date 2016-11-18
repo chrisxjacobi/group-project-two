@@ -7,8 +7,11 @@ var orm = {
 		var queryString = 'SELECT * FROM Project;';
 		connection.query(queryString, function (err, result) {
 			if (err) throw err;
-			console.log('result obj from showAllProj \n\n' + util.inspect(result) + '\n\n end result obj from showAllProj');
+			console.log('Made database call');
+			/*console.log('result obj from showAllProj \n\n' + util.inspect(result) + '\n\n end result obj from showAllProj');*/
+			return result;
 		});
+		
 	},
 		//add project to the projects table
 	addProj: function (project_name, project_date_time, project_location, project_description, project_duration, cb) {

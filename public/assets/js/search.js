@@ -13,6 +13,10 @@
 
 //***NEW STUFF TO ADD TO SQL FETCHING FILES *** volunteerID should be equal to the logged in user's primary key in the Volunteer table; perhaps a select statement added to orm file and called inside the showAllProj orm function that selects only the user currently using from the table like 'SELECT volunteer_id from Volunteer where login = true' in which case we would need to add a login true boolean to the Volunteer table and figure out a way to toggle it with the oauth login
 	var volunteerID = 1;
+
+
+$(document).ready(function() {
+
 function showAllProj() {
 	// get api call to get all the projects from the sql, orm, model, and controller and the callback displays them
 		$.get(currentUrl + '/helpr/search?', function(error, response) {
@@ -24,7 +28,7 @@ function showAllProj() {
 			$('#projects-near-you-row').hide();
 			//create a container to hold all the search results and a button to go back to the main view
 			var addEmAll = $('<div class="container-fluid" id="add-em-all"><div class="row"><div class="col col-xs-12" id="search-results"></div><div class="col col-xs-12"><button type="button" id="show-main">Go Back</button></div></div></div>');
-			$('.bkgrnd').after(addEmAll);
+			$('.jumbotron').after(addEmAll);
 			//response should be an array with objects inside.  *** ADJUST FOR LOOP *** for actual response
 			for(var i = 0; i < response.length; i++) {
 				var results = $('<div class="indiv-results"><h3>' + response[i].project_name + '</h3><p>' + response[i].project_date_time + '</p><p>' + response[i].project_location + '</p><div>map</div><p>' + response[i].project_description + '</p><button class="join-up" type="button" data-proj="' + response[i].project_id + '">Volunteer Now</button></div>');
@@ -33,7 +37,7 @@ function showAllProj() {
 		}); // show all proj get
 }
 
-$(document).ready(function() {
+
 
 	//onclick adds a new project
 	$('#project-submit').click(function() {
@@ -65,6 +69,7 @@ $(document).ready(function() {
 
 	//onclick to show all the projects in the sql
 	$('#show-all-proj').click(function() {
+		//console.log("i clicked");
 		showAllProj();
 	}); //show all proj on click
 
