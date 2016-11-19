@@ -88,7 +88,9 @@ function showAllProj() {
 			project_date_time: $('#date-time').val().trim(), //with a function done to it to convert 	it to our standard format
 			project_location: $('#location').val().trim(), //maybe use google geolocator if we get 	there
 			project_description: $('#description').val().trim(),
-			project_duration: $('#duration').val().trim() //s/b a float
+			project_duration: $('#duration').val().trim(), //s/b a float
+			project_img: $('#proj-img').val().trim()
+
 		};
 		//parameterize the addproject api call obj
 		var projectParams = $.param(addProject);
