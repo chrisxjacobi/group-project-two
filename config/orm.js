@@ -2,6 +2,18 @@
 var connection = require('../config/connection.js');
 var util = require('util');
 
+// function to make question marks
+function printQuestionMarks(num) {
+	var arr = [];
+
+	for (var i = 0; i < num; i++) {
+		arr.push('?');
+	}
+
+	return arr.toString();
+}
+
+
 var orm = {
 	showAllProj: function(cb) {
 		var queryString = 'SELECT * FROM Project;';
@@ -13,15 +25,21 @@ var orm = {
 		});
 
 	},
-		//add project to the projects table
-	addProj: function (project_name, project_date_time, project_location, project_description, project_duration, cb) {
-		var queryString = ('INSERT INTO Project (project_name, project_date_time, project_location, project_description, project_duration) VALUES (' + project_name + ', ' + project_date_time + ', ' +
-		    project_location + ', ' + project_description + ', ' + project_duration + ');');
+	addProj: function (table, cols, vals, cb) {
+		var queryString = 'INSERT INTO ' + table;
 
-		console.log('queryString from addProj: ' + queryString);
-		connection.query(queryString, function (err, result) {
+		queryString = queryString + ' (';
+		queryString = queryString + cols.toString();
+		queryString = queryString + ') ';
+		queryString = queryString + 'VALUES (';
+		queryString = queryString + printQuestionMarks(vals.length);
+		queryString = queryString + ') ';
+
+		console.log(queryString);
+
+		connection.query(queryString, vals, function (err, result) {
 			if (err) throw err;
-			console.log('result obj from addProj \n\n' + util.inspect(result) + '\n\n end result obj from addProj');
+			cb(result);
 		});
 	},
 	//proj is a jquery input to the sql that tells us WHICH project to join with the vol input from the Volunteers table
