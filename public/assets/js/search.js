@@ -30,23 +30,22 @@ function showAllProj() {
 	// get api call to get all the projects from the sql, orm, model, and controller and the callback displays them
 	$.get(currentUrl + '/helpr/search?', function(data) {
 		//if(error) throw error;
-		console.log('data is ' + JSON.stringify(data));
-		console.log('data.project.length ' + data.project.length);
+		// console.log('data is ' + JSON.stringify(data));
+		// console.log('data.project.length ' + data.project.length);
 		//console.log('show view all projects response: \n\n' + response + '\n\n end view all projects response');
 		//hide the main page modules because the search results will take over
 		$('#current-projects-row').hide();
 		$('#create-project-row').hide();
 		$('#projects-near-you-row').hide();
+		$('#add-em-all').show();
 		//create a container to hold all the search results and a button to go back to the main view
-		var addEmAll = $('<div class="container-fluid" id="add-em-all">');
-		$('.jumbotron').after(addEmAll);
 		//response should be an array with objects inside.  *** ADJUST FOR LOOP *** for actual response
 		for(var i = 0; i < data.project.length; i++) {
 			var results = $('<div class="row">');
 	
 			var imgResult = $('<div class="col col-xs-4 col-result-img"><img alt="project-related image" src="' + data.project[i].project_img + '" /></div>');
 			var textResult = $('<div class="indiv-results"><h3>' + data.project[i].project_name + '</h3><p>' + data.project[i].project_date_time + '</p><p>' + data.project[i].project_location + '</p><div>map</div><p>' + data.project[i].project_description + '</p></div>');
-			var volBtn = $('<button class="btn btn-large btn-primary join-up" type="button" data-proj="' + data.project[i].project_id + '" data-proj-name="' + data.project[i].project_name + '">Volunteer Now</button>')
+			var volBtn = $('<button class="btn btn-large btn-primary join-up" type="button" data-proj="' + data.project[i].project_id + '" data-proj-name="' + data.project[i].project_name + '">Volunteer Now</button>');
 			textResult.append(volBtn);
 			results.append(imgResult);
 			results.append(textResult);
@@ -54,14 +53,23 @@ function showAllProj() {
 			$('#add-em-all').append(results);
 
 		} //show all proj for
-		var goBack = $('<div class="col col-xs-12 text-center"><button class="btn btn-large btn-primary back-btn" type="button" id="show-main">Go Back</button></div>');
+		var goBack = $('<div class="col col-xs-12 text-center"><button class="btn btn-large btn-primary back-btn show-main" type="button">Go Back</button></div>');
 		$('#add-em-all').append(goBack);
 
-		$('#show-main').click(function() {
+		$('.show-main').click(function() {
 			$('#current-projects-row').show();
 			$('#create-project-row').show();
 			$('#projects-near-you-row').show();
 			$('#add-em-all').hide();
+			$('#add-em-all').empty();
+			$('#show-all-proj').click(function() {
+				console.log("on click is working");
+				showAllProj();
+				$('#show-all-proj').off();
+			}); //show all proj on click
+			// $('#current-projects-row').click(function() {
+			// 	showAllProj();
+			// }); //show all proj on click of glyphicon section
 		}); //show-main onclick end
 
 
@@ -115,6 +123,11 @@ function showAllProj() {
     		success: function(result) {
         	// Do something with the result
 			console.log(result);
+			var addProjName = $('#project-name').val();
+			$('#modal-add').text('You have added the project ' + addProjName + '.  Sit back and watch the help roll in!');
+			var inst = $('[data-remodal-id=add-proj-modal]').remodal();
+			inst.open();
+			$('.ap').val('');
     		}
 		});
 
@@ -124,6 +137,7 @@ function showAllProj() {
 	$('#show-all-proj').click(function() {
 		console.log("on click is working");
 		showAllProj();
+		$('#show-all-proj').off();
 	}); //show all proj on click
 
 	$('#current-projects-row').click(function() {
@@ -162,26 +176,3 @@ function showAllProj() {
 	});//sign in  click event
 
 }); //document ready
-
-
-//this response object approximates the sql response to the view all projects function so that we can test the jquery get callback function.  comment out when mvp.
-		// var response = [{
-		// 	project_name: "Paint Norma's Fence",
-		// 	project_location: "675 Mairo St, Austin, TX 78748",
-		// 	project_description: "paint a fence for norma, she is awesome",
-		// 	project_date_time: '2017-08-20 15:00',
-		// 	project_duration: 4
-		// }, {
-		// 	project_name: "Austin Food Pantry",
-		// 	project_location: "673 Mairo St, Austin, TX 78748",
-		// 	project_description: "stock cans for the hungry",
-		// 	project_date_time: '2017-08-21 10:00',
-		// 	project_duration: 2.5
-		// }, {
-		// 	project_name: "file papers for a professor",
-		// 	project_location: "671 Mairo St, Austin, TX 78748",
-		// 	project_description: "file all the newest research for a sociology professor",
-		// 	project_date_time: '2017-08-22 12:00',
-		// 	project_duration: 3
-
-		// }];

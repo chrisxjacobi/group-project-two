@@ -150,6 +150,10 @@ p {
   margin-top: 20px;
 }
 
+#add-em-all {
+  display: none;
+}
+
 /*google map-canvas*/
 #map-canvas {
   color: #494a4a;

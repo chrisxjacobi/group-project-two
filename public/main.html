@@ -118,6 +118,12 @@
         </div>
       </div>
     </div>
+    <!-- row to append view projects -->
+
+    <div class="container-fluid" id="add-em-all">
+      
+    </div><!-- end add em all -->
+
 
     <!-- create a project row -->
     <div class="container-fluid" id="create-project-row">
@@ -125,40 +131,40 @@
         <div class="form-group row text-center">
           <div class="col-xs-12">
             <h3>create a project</h3>
-            <input type="text" class="form-control" id="project-name" placeholder="project name">
+            <input type="text" class="form-control ap" id="project-name" placeholder="project name">
           </div><!-- col-xs-12 -->
         </div><!-- form group row -->
         <div class="form-group row text-center">
           <div class="col-xs-12">
           <h3>select a date and time</h3>
-            <input type="text" class="form-control" id="date-time" placeholder="11/23/16   2:00pm">
+            <input type="text" class="form-control ap" id="date-time" placeholder="11/23/16   2:00pm">
           </div><!-- col-xs-12 -->
         </div><!-- row form-group -->
         <div class="form-group row text-center">
           <div class="col-xs-12">
             <h3>duration of project</h3>
-            <label class="checkbox-inline"><input type="checkbox" value="1" id="duration"> one hour</label>
-            <label class="checkbox-inline"><input type="checkbox" value="2" id="duration"> two hours</label>
-            <label class="checkbox-inline"><input type="checkbox" value="3" id="duration"> three hours</label>
-            <label class="checkbox-inline"><input type="checkbox" value="4" id="duration"> four hours</label>
+            <label class="checkbox-inline"><input type="checkbox" value="1" id="duration" class="ap"> one hour</label>
+            <label class="checkbox-inline"><input type="checkbox" value="2" id="duration" class="ap"> two hours</label>
+            <label class="checkbox-inline"><input type="checkbox" class="ap" value="3" id="duration"> three hours</label>
+            <label class="checkbox-inline"><input type="checkbox" class="ap" value="4" id="duration"> four hours</label>
           </div><!-- col-xs-12 -->
         </div><!-- row form-group -->
         <div class="form-group row text-center">
           <div class="col-xs-12">
             <h3>location</h3>
-            <input type="text" class="form-control" id="location" placeholder="101 E Cesar Chavez, Austin, TX 78701">
+            <input type="text" class="form-control ap" id="location" placeholder="101 E Cesar Chavez, Austin, TX 78701">
           </div><!-- col-xs-12 -->
         </div><!-- row form-group -->
         <div class="form-group row text-center">
           <div class="col-xs-12">
             <label for="comment"><h3>project description</h3></label>
-            <textarea class="form-control" rows="3"  id="description"></textarea>
+            <textarea class="ap form-control" rows="3"  id="description"></textarea>
           </div><!-- col-xs-12 -->
         </div><!-- row form-group -->
         <div class="form-group row text-center">
           <div class="col-xs-12">
           <h3>add a project image</h3>
-            <input type="text" class="form-control" id="proj-img" placeholder="http://example.com/image.jpg">
+            <input type="text" class="form-control ap" id="proj-img" placeholder="http://example.com/image.jpg">
           </div><!-- col-xs-12 -->
         </div><!-- row form-group -->
 
@@ -211,7 +217,7 @@
 
 	<div class="remodal" data-remodal-id="add-proj-modal">
   	<button data-remodal-action="close" class="remodal-close"></button>
-  	<h2>project successfully added</h2>
+  	<h2 id="modal-add"></h2>
   	<button data-remodal-action="cancel" class="remodal-cancel">okay</button>
 	</div>
 
