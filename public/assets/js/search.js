@@ -88,7 +88,9 @@ function showAllProj() {
 			project_date_time: $('#date-time').val().trim(), //with a function done to it to convert 	it to our standard format
 			project_location: $('#location').val().trim(), //maybe use google geolocator if we get 	there
 			project_description: $('#description').val().trim(),
-			project_duration: $('#duration').val().trim() //s/b a float
+			project_duration: $('#duration').val().trim(), //s/b a float
+			project_img: $('#proj-img').val().trim()
+
 		};
 		//parameterize the addproject api call obj
 		var projectParams = $.param(addProject);
@@ -96,7 +98,7 @@ function showAllProj() {
 
 		//get api call to add a project through the controller, model, and orm to the sql
 
-		$.get(currentUrl + '/helpr/addproj?' + projectParams, function(error, response) {
+		$.post(currentUrl + '/helpr/addproj?' + projectParams, function(error, response) {
 			if(err) throw err;
 			console.log('if we"ve successfully entered a new project into sql we"ll get this non-null response is: \n\n' + response);
 		// *** ADD MODAL *** if we have a response we'll get a modal pop up telling us we actually added a project.

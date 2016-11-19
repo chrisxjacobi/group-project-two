@@ -141,7 +141,7 @@ p {
   padding-bottom: 30px;
 }
 /*form that is within the create-project-row*/
-#description, #location, #date-time, #project-name {
+#description, #location, #date-time, #project-name, #proj-img {
   margin: 0 auto;
   width: 50%;
 }
