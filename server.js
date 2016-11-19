@@ -16,6 +16,9 @@ app.set('view engine', 'html');
 //Serve static content for the ap;p from the "public" directory in the application directory.
 app.use(express.static(path.join(__dirname, '/public')));
 
+// connect google maps files to the server
+app.use('/maplogic', express.static('maplogic'));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
@@ -25,7 +28,7 @@ app.use('/', routes);
 app.use('/helpr', routes);
 app.use('/helpr/addproj', routes);
 app.use('/helpr/search', routes);
-app.use('/helpr/help', routes);
+// app.use('/helpr/help', routes);
 
 // listen on port 3000
 var port = process.env.PORT || 3000;
