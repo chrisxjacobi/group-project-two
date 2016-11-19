@@ -63,15 +63,26 @@ function showAllProj() {
 
 		//get api call to add a project through the controller, model, and orm to the sql
 
-		$.get(currentUrl + '/helpr/addproj?' + projectParams, function(error, response) {
-			if(err) throw err;
-			console.log('if we"ve successfully entered a new project into sql we"ll get this non-null response is: \n\n' + response);
-		// *** ADD MODAL *** if we have a response we'll get a modal pop up telling us we actually added a project.
-			if(response) {
-				console.log('fire modal with entry successful');
-				$('[data-remodal-id=add-proj-modal]').remodal().open();
-			} //add proj response if
-		}); // add proj get callback
+		// $.get(currentUrl + '/helpr/addproj?' + projectParams, function(error, response) {
+		// 	console.log(error);
+		// 	if(error) throw error;
+		//
+		// 	console.log('if we"ve successfully entered a new project into sql we"ll get this non-null response is: \n\n' + response);
+		// // *** ADD MODAL *** if we have a response we'll get a modal pop up telling us we actually added a project.
+		// 	if(response) {
+		// 		console.log('fire modal with entry successful');
+		// 		$('[data-remodal-id=add-proj-modal]').remodal().open();
+		// 	} //add proj response if
+		// }); // add proj get callback
+		$.ajax({
+    		url: currentUrl + '/helpr/addproj?' + projectParams,
+    		type: 'POST',
+    		success: function(result) {
+        	// Do something with the result
+			console.log(result);
+    		}
+		});
+
 	});// add proj project submit
 
 	//onclick to show all the projects in the sql

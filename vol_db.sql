@@ -22,7 +22,7 @@ SELECT * FROM volunteer_db.Project;
 CREATE TABLE volunteer_db.Volunteer(
 volunteer_id INTEGER(11) AUTO_INCREMENT NOT NULL,
 volunteer_name VARCHAR(30),
-volunteer_email VARCHAR(30), 
+volunteer_email VARCHAR(30),
 PRIMARY KEY (volunteer_id)
 );
 
@@ -36,8 +36,8 @@ VALUES	('Balthazar Longbottom', 'balth@gmail.com'),
 SELECT * FROM volunteer_db.Volunteer;
 
 CREATE TABLE volunteer_db.Linked(
-linked_id INTEGER AUTO_INCREMENT NOT NULL, 
-vol_id INTEGER(11) NOT NULL, 
-proj_id INTEGER(11) NOT NULL, 
+linked_id INTEGER AUTO_INCREMENT NOT NULL,
+vol_id INTEGER(11) NOT NULL,
+proj_id INTEGER(11) NOT NULL,
 PRIMARY KEY(linked_id)
 );

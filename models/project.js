@@ -8,8 +8,8 @@ var project = {
             console.log("this is the model result " + res);
         });
     },
-    addProj: function(project_name, project_date_time, project_location, project_description, project_duration, cb) {
-        orm.addProj(project_name, project_date_time, project_location, project_description, project_duration, function(res){
+    addProj: function(columns, values, cb) {
+        orm.addProj('Project', columns, values, function(res){
             cb(res);
         });
     },
