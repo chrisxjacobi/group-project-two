@@ -78,7 +78,7 @@ var marker6 =map.addMarker({
                "lat" : 30.3048581,
              "lng" : -97.6976228,
              visible: true,
-             content:'Clean Up Barthalomew Park',
+             content:'Clean Up Bartholomew Park',
            icon: 'http://findicons.com/files/icons/951/google_maps/32/park.png'
 
             
